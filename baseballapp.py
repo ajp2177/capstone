@@ -24,8 +24,6 @@ st.sidebar.markdown("## Predict the Salary of a MLB Hitter!")
 st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
 st.sidebar.markdown("How does a team determine how much to pay their players?")
 
-st.sidebar.markdown("#### Built by Eric Au")
-
 # input bar 1
 difference = st.number_input("Average Salary Difference (in $)")
 st.caption("*Note: Average Salary Difference is the average increase/decrease of a salary across a player's entire career. \
@@ -59,7 +57,7 @@ ops = st.number_input("Enter OPS")
 if st.button("Submit"):
 
     # unpickle the batting model
-    bb_model = joblib.load("pkl/bb_model.pkl")
+    #bb_model = joblib.load("pkl/bb_model.pkl")
 
     # store inputs into df
 
@@ -92,10 +90,10 @@ batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
 df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
 
 # load in model
-bb_model = joblib.load("pkl/bb_model.pkl")
+#bb_model = joblib.load("pkl/bb_model.pkl")
 
 # make prediction
-predictions_2022 = bb_model.predict(df_to_predict)
+#predictions_2022 = bb_model.predict(df_to_predict)
 
 # Add prediction column
 batter_2022_df["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
