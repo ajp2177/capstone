@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title("Predicting Value of Contracts in Major League Baseball")
+st.title("Predicting MLB Contracts and Salaries")
 
 st.sidebar.button("help")
