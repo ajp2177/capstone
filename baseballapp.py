@@ -10,7 +10,7 @@ st.title("Predicting MLB Contracts and Salaries")
 st.sidebar.button("help")
 
 
-st.image("https://media.istockphoto.com/photos/rear-view-of-baseball-batter-and-catcher-watching-the-pitch-picture-id1174867119?b=1&k=20&m=1174867119&s=170667a&w=0&h=Lpk2muXoNKWB8dTpak55rqwM1ffEddzgSZsmJeZKEvg=", use_column_width= 'always')
+#st.image("https://media.istockphoto.com/photos/rear-view-of-baseball-batter-and-catcher-watching-the-pitch-picture-id1174867119?b=1&k=20&m=1174867119&s=170667a&w=0&h=Lpk2muXoNKWB8dTpak55rqwM1ffEddzgSZsmJeZKEvg=", use_column_width= 'always')
 
 # Title
 st.title("Predicting MLB Batter Salaries")
@@ -21,7 +21,7 @@ st.markdown("Enter the following statistics for a batter and \
 
 # Add sidebar
 st.sidebar.markdown("## Predict the Salary of a MLB Hitter!")
-st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
+#st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
 st.sidebar.markdown("How does a team determine how much to pay their players?")
 
 # input bar 1
