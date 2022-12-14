@@ -118,7 +118,6 @@ elif choice == "Predict Player Salary":
                                                    'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
 
-  selected_Users = st.sidebar.multiselect('Search By User', batter_2022_df)
 
   selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
 
