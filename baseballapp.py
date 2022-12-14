@@ -4,17 +4,7 @@ import pandas as pd
 import streamlit as st
 import joblib
 import time
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.header import Header
-from email.mime.application import MIMEApplication
-def send_email(receiver, smtp_server, 
-smtp_port, email_message):
-  message = MIMEMultipart()
-  message['To'] = Header(receiver)
-  message['Subject'] = Header(subject)
-  message.attach(MIMEText(email_message,'plain', 'utf-8'))
+
 
 def check_password():
     """Returns `True` if the user had the correct password."""
