@@ -69,6 +69,7 @@ elif choice == "Predict Player Salary":
 
         # get prediction
       prediction = bb_model.predict(df)
+      st.write(prediction)
 
       # convert prediction
       #converted = round(np.exp(prediction)[0],0)
@@ -82,7 +83,7 @@ elif choice == "Predict Player Salary":
 
       # output prediction
       #st.header(f"Predicted Player Salary: ${converted:,}")
-      st.header("Predicted Player Salary:", prediction)
+      #st.header("Predicted Player Salary:", prediction)
       
 
 
