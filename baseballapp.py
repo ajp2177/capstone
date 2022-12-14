@@ -7,12 +7,8 @@ import time
 
 st.title("Predicting MLB Player Salaries")
 
-#st.sidebar.button("help")
-
-
 st.image("capstonehome.jpeg", use_column_width= 'always')
 
-# Subtitle
 st.markdown("Enter the following statistics for a batter and \
                     get an estimated salary value.")
 
