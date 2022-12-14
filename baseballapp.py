@@ -7,10 +7,10 @@ import time
 
 st.title("Predicting MLB Contracts and Salaries")
 
-st.sidebar.button("help")
+#st.sidebar.button("help")
 
 
-#st.image("https://media.istockphoto.com/photos/rear-view-of-baseball-batter-and-catcher-watching-the-pitch-picture-id1174867119?b=1&k=20&m=1174867119&s=170667a&w=0&h=Lpk2muXoNKWB8dTpak55rqwM1ffEddzgSZsmJeZKEvg=", use_column_width= 'always')
+#st.image("https://thewestsidestory.org/wp-content/uploads/2021/11/68AEE9CA-8C0D-4419-AEA8-722F136A461F-900x450.jpeg", use_column_width= 'always')
 
 # Title
 st.title("Predicting MLB Batter Salaries")
