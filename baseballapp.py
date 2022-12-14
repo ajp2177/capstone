@@ -117,6 +117,16 @@ batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ 
 st.dataframe(batter_2022_df)
   
 selected_Users = st.sidebar.multiselect('Search By User', batter_2022_df)
+ 
+    
+    
+if selected_Users:
+ batter_2022_df = batter_2022_df[batter_2022_df["Name"].isin(selected_Users)]
+ st.markdown(
+           f'<p class="header_title"> {str(batter_2022_df.shape[0])} </p>',
+           unsafe_allow_html=True,
+           )
+               
 
                             
 
