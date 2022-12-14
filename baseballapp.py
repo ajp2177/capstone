@@ -84,7 +84,7 @@ elif choice == "Predict Player Salary":
 
 
       # header
-  st.markdown("### How do the predictions compare to 2022 stats thus far?")
+  st.markdown("### Predictions vs. 2022 MLB Stats")
 
   # 2022 batter dataframe
   batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
