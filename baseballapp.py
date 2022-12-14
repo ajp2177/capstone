@@ -130,25 +130,18 @@ selected = st.text_input("", "Search...")
 button_clicked = st.button("OK")
 
 
-import streamlit as st 
-import pandas as pd
-
  
-df_result_search = st.dataframe(batter_2022_df)
+st.dataframe(batter_2022_df)
+
+choice = st.sidebar.text_input("Search:", key="choice")
+
+if choice == "":
+#if nothing is inputed display pandas df as is
+    st.dataframe(data=df.head(50), height=600)
+else:
+    df[df.apply(lambda r: any([kw in r[0] for kw in choice]), axis=1)]
 
 
-searchcheckbox_name_nickname = st.checkbox("Name",value = False,key=1)
-
-if searchcheckbox_name_nickname:
-    name_search = st.text_input("Name")
-if st.button("search"):
-    if not searchcheckbox_name_nickname:
-        st.error('Please enter name.')
-    else:
-        df_result_search = df_result_search[df_result_search['Name'].str.contains(name_search,case=False, na=False)]
-                        
-        st.write("{} Records ".format(str(df_result_search.shape[0])))
-        st.dataframe(df_result_search)
 
 
 
