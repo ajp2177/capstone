@@ -133,12 +133,8 @@ button_clicked = st.button("OK")
 import streamlit as st 
 import pandas as pd
 
-data = {'name':['Tom', 'nick', 'krish', 'jack'],
-        'nickname':['jack','krish','karim','joe'],
-        'age':[20, 18, 19, 18]}
  
-df = pd.DataFrame(data)
-df_result_search = pd.DataFrame() 
+df_result_search = st.dataframe(batter_2022_df)
 
 
 searchcheckbox_name_nickname = st.checkbox("Name",value = False,key=1)
@@ -155,7 +151,7 @@ if st.button("search"):
         st.dataframe(df_result_search)
 
 
-st.dataframe(batter_2022_df)
+
 
 
     
