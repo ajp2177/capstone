@@ -137,9 +137,9 @@ choice = st.sidebar.text_input("Search:", key="choice")
 
 if choice == "":
 #if nothing is inputed display pandas df as is
-    st.dataframe(data=df.head(50), height=600)
+    st.dataframe(data=batter_2022_df.head(50), height=600)
 else:
-    df[df.apply(lambda r: any([kw in r[0] for kw in choice]), axis=1)]
+    batter_2022_df[batter_2022_df.apply(lambda r: any([kw in r[0] for kw in choice]), axis=1)]
 
 
 
