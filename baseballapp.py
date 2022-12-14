@@ -17,7 +17,7 @@ if choice == "Home":
   
   st.image('https://www.sportico.com/wp-content/uploads/2022/04/Valuation_List_1280x720-1.png?w=1280&h=720&crop=1')
   
-  st.markdown("<This application provides a model to predict the salary that should be given to players based on performance metrics.", unsafe_allow_html=True)
+  st.markdown("This application provides a model to predict the salary that should be given to players based on performance metrics.", unsafe_allow_html=True)
 
 elif choice == "Predict Player Salary":
   
