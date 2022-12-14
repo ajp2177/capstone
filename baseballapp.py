@@ -18,7 +18,11 @@ def check_password():
 
     if "password_correct" not in st.session_state:
         # First run, show input for password.
-        st.subheader("**Enter password to access Churn prediction application**")
+        st.subheader("**Enter username to access application**")
+        st.text_input(
+            "Username:", type="username", on_change=password_entered, key="username"
+        )
+        st.subheader("**Enter password to access application**")
         st.text_input(
             "Password:", type="password", on_change=password_entered, key="password"
         )
