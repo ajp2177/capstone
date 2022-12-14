@@ -99,45 +99,50 @@ elif choice == "Predict Player Salary":
 
   # Add prediction column
   batter_2022_df["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+  
+  pred_button = st.button("Prediction comparisions")
+  
+  if pred_button:
+    
 
-  # Add value column
-  batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
-  batter_2022_df.loc[batter_2022_df['Predicted Salary'] < batter_2022_df['2022 Salary'], 'Value?'] = 'Over-valued'
+    # Add value column
+    batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
+    batter_2022_df.loc[batter_2022_df['Predicted Salary'] < batter_2022_df['2022 Salary'], 'Value?'] = 'Over-valued'
 
-  # reorder columns
-  batter_2022_df = batter_2022_df[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
-                                 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']]
+    # reorder columns
+    batter_2022_df = batter_2022_df[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
+                                   'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']]
 
-  # formatting as Millions
-  batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary']
-  batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary']
-  batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference']
+    # formatting as Millions
+    batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary']
+    batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary']
+    batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference']
 
-  batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
-                                                   'Predicted Salary':'Predicted Salary ($ Millions)',
-                                                   'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
-
-
-
-  selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
-
-  selected_reward_price = batter_2022_df.loc[batter_2022_df.Name == selected_reward].iloc[0:13]
-
-  st.dataframe(selected_reward_price)
-
-  def convert_df(churn):
-    return churn.to_csv(index=False).encode('utf-8')
+    batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
+                                                     'Predicted Salary':'Predicted Salary ($ Millions)',
+                                                     'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
 
-    csv = convert_df(pd.DataFrame(selected_reward_price))
 
-    st.download_button(
-        "Download predictions",
-        csv,
-        "player_salary.csv",
-        "text/csv",
-        key='download-csv'
-    )
+    selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
+
+    selected_reward_price = batter_2022_df.loc[batter_2022_df.Name == selected_reward].iloc[0:13]
+
+    st.dataframe(selected_reward_price)
+
+    def convert_df(churn):
+      return churn.to_csv(index=False).encode('utf-8')
+
+
+      csv = convert_df(pd.DataFrame(selected_reward_price))
+
+      st.download_button(
+          "Download predictions",
+          csv,
+          "player_salary.csv",
+          "text/csv",
+          key='download-csv'
+      )
                             
 
 
