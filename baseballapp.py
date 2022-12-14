@@ -5,15 +5,12 @@ import streamlit as st
 import joblib
 import time
 
-st.title("Predicting MLB Contracts and Salaries")
+st.title("Predicting MLB Player Salaries")
 
 #st.sidebar.button("help")
 
 
 st.image("capstonehome.jpeg", use_column_width= 'always')
-
-# Title
-st.title("Predicting MLB Batter Salaries")
 
 # Subtitle
 st.markdown("Enter the following statistics for a batter and \
