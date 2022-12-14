@@ -13,16 +13,7 @@ choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
 
 
 if choice == "Home":
-  
-  title_alignment=
-"""
-<style>
-#the-title {
-  text-align: center
-}
-</style>
-"""
-st.markdown(title_alignment, unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center; color: grey;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
   st.title("The Value of MLB Players")
   st.image('https://www.sportico.com/wp-content/uploads/2022/04/Valuation_List_1280x720-1.png?w=1280&h=720&crop=1')
 
