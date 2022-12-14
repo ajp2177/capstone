@@ -5,6 +5,8 @@ import streamlit as st
 import joblib
 import time
 
+st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
+
 st.title("Predicting MLB Player Salaries")
 
 st.image("capstonehome.jpeg", use_column_width= 'always')
