@@ -131,9 +131,11 @@ button_clicked = st.button("OK")
 
 selected_indices = st.multiselect('Select rows:', batter_2022_df.Name)
 
-st.write(batter_2022_df.loc[batter_2022_df == selected_indices.Name)
+st.write(batter_2022_df.loc[batter_2022_df == selected_indices].Name)
  
 st.dataframe(batter_2022_df)
+                            
+                            
 
 
 
