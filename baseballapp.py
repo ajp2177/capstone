@@ -72,7 +72,7 @@ elif choice == "Predict Player Salary":
 
       # convert prediction
       #converted = round(np.exp(prediction)[0],0)
-      converted = np.exp(prediction)
+      #converted = np.exp(prediction)
 
       with st.spinner('Calculating...'):
           time.sleep(1)
@@ -81,7 +81,9 @@ elif choice == "Predict Player Salary":
       st.dataframe(df)
 
       # output prediction
-      st.header(f"Predicted Player Salary: ${converted:,}")
+      #st.header(f"Predicted Player Salary: ${converted:,}")
+      st.header("Predicted Player Salary:", prediction)
+      
 
 
   
