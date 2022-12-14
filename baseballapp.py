@@ -21,13 +21,13 @@ def check_user():
         # First run, show input for password.
         st.subheader("**Enter username to access application**")
         st.text_input(
-            "Username:", type="password", on_change=username_entered, key="username"
+            "Username:", type="default", on_change=username_entered, key="username"
         )
         return False
     elif not st.session_state["username_correct"]:
         # Password not correct, show input + error.
         st.text_input(
-            "username", type="password", on_change=username_entered, key="username"
+            "username", type="default", on_change=username_entered, key="username"
         )
         st.error("Incorrect username, please try again.")
         return False
