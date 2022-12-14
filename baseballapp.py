@@ -132,19 +132,19 @@ elif choice == "Predict Player Salary":
 
   st.dataframe(selected_reward_price)
 
- def convert_df(churn):
-                    return churn.to_csv(index=False).encode('utf-8')
+  def convert_df(churn):
+    return churn.to_csv(index=False).encode('utf-8')
 
 
-                csv = convert_df(pd.DataFrame(selected_reward_price))
+    csv = convert_df(pd.DataFrame(selected_reward_price))
 
-                st.download_button(
-                    "Download predictions",
-                    csv,
-                    "player_salary.csv",
-                    "text/csv",
-                    key='download-csv'
-                )
+    st.download_button(
+        "Download predictions",
+        csv,
+        "player_salary.csv",
+        "text/csv",
+        key='download-csv'
+    )
                             
 
 
