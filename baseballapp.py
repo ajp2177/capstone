@@ -27,11 +27,6 @@ elif choice == "Predict Player Salary":
   st.markdown("Enter the following statistics for a batter and \
                       get an estimated salary value.")
 
-  # Add sidebar
-  st.sidebar.markdown("## Predict the Salary of a MLB Hitter!")
-  #st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
-  st.sidebar.markdown("How does a team determine how much to pay their players?")
-
   
   difference = st.number_input("Average Salary Difference (in $)")
   st.caption("*Note: Average Salary Difference is the average increase/decrease of a salary across a player's entire career. \
