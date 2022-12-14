@@ -129,18 +129,11 @@ icon("search")
 selected = st.text_input("", "Search...")
 button_clicked = st.button("OK")
 
-
+selected_indices = st.multiselect('Select rows:', batter_2022_df.index)
  
 st.dataframe(batter_2022_df)
 
-def search(data, column, search_term):
-    if column == 'Age':
-        search_term = int(search_term)
-    indexes = data.loc[data[column].isin([search_term])].index
-    if indexes.size > 0:
-        return data.iloc[indexes]
-    else:
-        return []
+
 
 
 
