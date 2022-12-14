@@ -15,7 +15,7 @@ choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
 if choice == "Home":
   st.title("The Value of MLB Players")
 
-elif choice == "Preidct Player Salary":
+elif choice == "Predict Player Salary":
   
   st.title("Predicting MLB Player Salaries")
 
