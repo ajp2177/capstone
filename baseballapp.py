@@ -140,12 +140,12 @@ df_result_search = st.dataframe(batter_2022_df)
 searchcheckbox_name_nickname = st.checkbox("Name",value = False,key=1)
 
 if searchcheckbox_name_nickname:
-    name_search = st.text_input("name")
+    name_search = st.text_input("Name")
 if st.button("search"):
     if not searchcheckbox_name_nickname:
         st.error('Please enter name.')
     else:
-        df_result_search = df[df['name'].str.contains(name_search,case=False, na=False)]
+        df_result_search = df_result_search[df_result_search['Name'].str.contains(name_search,case=False, na=False)]
                         
         st.write("{} Records ".format(str(df_result_search.shape[0])))
         st.dataframe(df_result_search)
