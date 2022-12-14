@@ -71,7 +71,8 @@ elif choice == "Predict Player Salary":
       prediction = bb_model.predict(df)
 
       # convert prediction
-      converted = round(np.exp(prediction)[0],0)
+      #converted = round(np.exp(prediction)[0],0)
+      converted = np.exp(prediction)
 
       with st.spinner('Calculating...'):
           time.sleep(1)
