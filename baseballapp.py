@@ -18,8 +18,7 @@ if choice == "Home":
   st.image('https://www.sportico.com/wp-content/uploads/2022/04/Valuation_List_1280x720-1.png?w=1280&h=720&crop=1')
 
 elif choice == "Predict Player Salary":
-  
-  st.title("Predicting MLB Player Salaries")
+ 
 
   st.image("capstonehome.jpeg", use_column_width= 'always')
 
