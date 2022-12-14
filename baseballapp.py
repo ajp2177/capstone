@@ -57,7 +57,7 @@ ops = st.number_input("Enter OPS")
 if st.button("Submit"):
 
     # unpickle the batting model
-    #bb_model = joblib.load("pkl/bb_model.pkl")
+    bb_model = joblib.load("batting_basic_model.pkl")
 
     # store inputs into df
 
