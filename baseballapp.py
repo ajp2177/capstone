@@ -129,7 +129,7 @@ icon("search")
 selected = st.text_input("", "Search...")
 button_clicked = st.button("OK")
 
-selected_indices = st.multiselect('Select rows:', batter_2022_df.index)
+selected_indices = st.multiselect('Select rows:', batter_2022_df.Name)
  
 st.dataframe(batter_2022_df)
 
