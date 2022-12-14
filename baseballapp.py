@@ -4,42 +4,7 @@ import pandas as pd
 import streamlit as st
 import joblib
 import time
-import streamlit_authenticator as stauth
 
-
-with open('config.yaml') as file:
-    config = yaml.load(file, Loader=SafeLoader)
-
-authenticator = stauth.Authenticate(
-    config['credentials'],
-    config['cookie']['name'],
-    config['cookie']['key'],
-    config['cookie']['expiry_days'],
-    config['preauthorized']
-)
-
-
-name, authentication_status, username = authenticator.login('Login', 'main')
-
-
-if authentication_status:
-    authenticator.logout('Logout', 'main')
-    st.write(f'Welcome *{name}*')
-    st.title('Some content')
-elif authentication_status == False:
-    st.error('Username/password is incorrect')
-elif authentication_status == None:
-    st.warning('Please enter your username and password')
-    
-try:
-    username_forgot_pw, email_forgot_password, random_password = authenticator.forgot_password('Forgot password')
-    if username_forgot_pw:
-        st.success('New password sent securely')
-        # Random password to be transferred to user securely
-    elif username_forgot_pw == False:
-        st.error('Username not found')
-except Exception as e:
-    st.error(e)
 
 def check_password():
     """Returns `True` if the user had the correct password."""
