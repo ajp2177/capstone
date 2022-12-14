@@ -145,7 +145,6 @@ searchcheckbox_name_nickname = st.checkbox("Name",value = False,key=1)
 
 if searchcheckbox_name_nickname:
     name_search = st.text_input("name")
-    nickname_search = st.text_input("nickname")
 if st.button("search"):
     if not searchcheckbox_name_nickname:
         st.error('Please enter name.')
