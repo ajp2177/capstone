@@ -117,9 +117,6 @@ batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ 
 st.dataframe(batter_2022_df)
   
 selected_Users = st.sidebar.multiselect('Search By User', batter_2022_df)
- 
-    
-st.table(batter_2022_df)
 
 selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
 
