@@ -20,8 +20,8 @@ if choice == "Home":
   st.markdown("<p1 style='text-align: center; color: black;'>This application provides a model to predict the salary that should be given to players based on performance metrics.</p1>", unsafe_allow_html=True)
 
 elif choice == "Predict Player Salary":
- 
-  st.title("Predict Player Salary")
+  
+  st.markdown("<h1 style='text-align: center; color: green;'>Predict Player Salary</h1>", unsafe_allow_html=True)
   st.image("capstonehome.jpeg", use_column_width= 'always')
 
   st.markdown("Enter the following statistics for a batter and \
