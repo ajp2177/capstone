@@ -133,7 +133,7 @@ button_clicked = st.button("OK")
  
 st.dataframe(batter_2022_df)
 
-choice = st.sidebar.text_input("Search:", key="choice")
+choice = st.text_input("Search:", key="choice")
 
 if choice == "":
 #if nothing is inputed display pandas df as is
