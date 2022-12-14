@@ -5,6 +5,36 @@ import streamlit as st
 import joblib
 import time
 
+
+def check_user():
+    """Returns `True` if the user had the correct username."""
+
+    def username_entered():
+        """Checks whether a username entered by the user is correct."""
+        if st.session_state["username"] == st.secrets["username"]:
+            st.session_state["username_correct"] = True
+            del st.session_state["username"]  # don't store password
+        else:
+            st.session_state["username_correct"] = False
+
+    if "username_correct" not in st.session_state:
+        # First run, show input for password.
+        st.subheader("**Enter username to access application**")
+        st.text_input(
+            "Username:", type="username", on_change=password_entered, key="username"
+        )
+        return False
+    elif not st.session_state["username_correct"]:
+        # Password not correct, show input + error.
+        st.text_input(
+            "username", type="username", on_change=password_entered, key="username"
+        )
+        st.error("Incorrect username, please try again.")
+        return False
+    else:
+        # Password correct.
+        return True
+
 def check_password():
     """Returns `True` if the user had the correct password."""
 
@@ -35,7 +65,7 @@ def check_password():
         return True
 
 
-if check_password():
+if check_password() && check_user():
 
   st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
 
