@@ -121,9 +121,9 @@ selected_Users = st.sidebar.multiselect('Search By User', batter_2022_df)
     
 st.table(batter_2022_df)
 
-selected_reward = st.selectbox("Choose a Player", batter_2022_df.Item, 0)
+selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
 
-selected_reward_price = batter_2022_df.loc[batter_2022_df.Item == selected_reward]["*"].iloc[0]
+selected_reward_price = batter_2022_df.loc[batter_2022_df.Name == selected_reward]["*"].iloc[0]
 
 st.write(f'Price: {selected_reward_price}')
                
