@@ -10,7 +10,7 @@ st.title("Predicting MLB Contracts and Salaries")
 #st.sidebar.button("help")
 
 
-#st.image("https://thewestsidestory.org/wp-content/uploads/2021/11/68AEE9CA-8C0D-4419-AEA8-722F136A461F-900x450.jpeg", use_column_width= 'always')
+st.image("capstonehome.jpeg", use_column_width= 'always')
 
 # Title
 st.title("Predicting MLB Batter Salaries")
