@@ -80,7 +80,7 @@ elif choice == "Predict Player Salary":
       st.dataframe(df)
 
       # output prediction
-      st.header(f"Predicted Player Salary: ${prediction:,}")
+      st.header(f"Predicted Player Salary: ${converted:,}")
 
 
   
