@@ -65,7 +65,7 @@ def check_password():
         return True
 
 
-if check_password() && check_user():
+if check_password() & check_user():
 
   st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
 
