@@ -110,8 +110,8 @@ elif choice == "Predict Player Salary":
 
   # formatting as Millions
   batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary']
-  batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary'].div(1000000).round(2)
-  batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference'].div(1000000).round(2)
+  batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary']
+  batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference']
 
   batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
                                                    'Predicted Salary':'Predicted Salary ($ Millions)',
