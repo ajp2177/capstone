@@ -119,13 +119,13 @@ st.dataframe(batter_2022_df)
 selected_Users = st.sidebar.multiselect('Search By User', batter_2022_df)
  
     
-    
-if selected_Users:
- batter_2022_df = batter_2022_df[batter_2022_df["Name"].isin(selected_Users)]
- st.markdown(
-           f'<p class="header_title"> {str(batter_2022_df.shape[0])} </p>',
-           unsafe_allow_html=True,
-           )
+st.table(batter_2022_df)
+
+selected_reward = st.selectbox("Choose a Player", batter_2022_df.Item, 0)
+
+selected_reward_price = batter_2022_df.loc[batter_2022_df.Item == selected_reward]["*"].iloc[0]
+
+st.write(f'Price: {selected_reward_price}')
                
 
                             
