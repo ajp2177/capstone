@@ -133,13 +133,14 @@ button_clicked = st.button("OK")
  
 st.dataframe(batter_2022_df)
 
-choice = st.text_input("Search:", key="choice")
-
-if choice == "":
-#if nothing is inputed display pandas df as is
-    st.dataframe(data=batter_2022_df.head(50), height=600)
-else:
-    batter_2022_df[batter_2022_df.apply(lambda r: any([kw in r[0] for kw in choice]), axis=1)]
+def search(data, column, search_term):
+    if column == 'Age':
+        search_term = int(search_term)
+    indexes = data.loc[data[column].isin([search_term])].index
+    if indexes.size > 0:
+        return data.iloc[indexes]
+    else:
+        return []
 
 
 
