@@ -64,5 +64,20 @@ if st.button("Submit"):
     column_names = ['Salary Difference', 'Age', 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']
     df = pd.DataFrame([[difference, age, hits, runs, rbi, walks, so, sb, ops]], 
                      columns = column_names)
+    
+      # get prediction
+    prediction = bb_model.predict(df)
+
+    # convert prediction
+    converted = round(np.exp(prediction)[0],0)
+
+    with st.spinner('Calculating...'):
+        time.sleep(1)
+    st.success('Done!')
+
+    st.dataframe(df)
+
+    # output prediction
+    st.header(f"Predicted Player Salary: ${converted:,}")
 
     
