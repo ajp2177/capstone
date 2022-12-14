@@ -9,7 +9,7 @@ st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
 
 pages = ["Home", "Plots", "Predict Player Salary"]
 message = '''Select one of the options in the dropdown list to access specific page'''
-choice = st.sidebar.selectbox("Choose a page: ",activities, help = message)
+choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
 
 st.title("Predicting MLB Player Salaries")
 
