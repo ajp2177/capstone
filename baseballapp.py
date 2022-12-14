@@ -102,7 +102,7 @@ elif choice == "Predict Player Salary":
   pred_button = st.button("Prediction comparisions")
   
   if pred_button:
-    t.markdown("### Predictions vs. 2022 MLB Stats")
+    st.markdown("### Predictions vs. 2022 MLB Stats")
 
     # Add value column
     batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
