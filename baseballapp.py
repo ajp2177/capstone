@@ -14,12 +14,12 @@ choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
 
 if choice == "Home":
   st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
-  st.title("The Value of MLB Players")
+  
   st.image('https://www.sportico.com/wp-content/uploads/2022/04/Valuation_List_1280x720-1.png?w=1280&h=720&crop=1')
 
 elif choice == "Predict Player Salary":
  
-
+  st.title("Predict Player Salary")
   st.image("capstonehome.jpeg", use_column_width= 'always')
 
   st.markdown("Enter the following statistics for a batter and \
