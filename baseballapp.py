@@ -124,8 +124,6 @@ elif choice == "Predict Player Salary":
                                                    'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
 
-  st.dataframe(batter_2022_df)
-
   selected_Users = st.sidebar.multiselect('Search By User', batter_2022_df)
 
   selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
@@ -134,7 +132,19 @@ elif choice == "Predict Player Salary":
 
   st.dataframe(selected_reward_price)
 
+ def convert_df(churn):
+                    return churn.to_csv(index=False).encode('utf-8')
 
+
+                csv = convert_df(pd.DataFrame(selected_reward_price))
+
+                st.download_button(
+                    "Download predictions",
+                    csv,
+                    "player_salary.csv",
+                    "text/csv",
+                    key='download-csv'
+                )
                             
 
 
