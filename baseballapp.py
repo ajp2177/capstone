@@ -130,6 +130,32 @@ selected = st.text_input("", "Search...")
 button_clicked = st.button("OK")
 
 
+import streamlit as st 
+import pandas as pd
+
+data = {'name':['Tom', 'nick', 'krish', 'jack'],
+        'nickname':['jack','krish','karim','joe'],
+        'age':[20, 18, 19, 18]}
+ 
+df = pd.DataFrame(data)
+df_result_search = pd.DataFrame() 
+
+
+searchcheckbox_name_nickname = st.checkbox("Name",value = False,key=1)
+
+if searchcheckbox_name_nickname:
+    name_search = st.text_input("name")
+    nickname_search = st.text_input("nickname")
+if st.button("search"):
+    if not searchcheckbox_name_nickname:
+        st.error('Please enter name.')
+    else:
+        df_result_search = df[df['name'].str.contains(name_search,case=False, na=False)]
+                        
+        st.write("{} Records ".format(str(df_result_search.shape[0])))
+        st.dataframe(df_result_search)
+
+
 st.dataframe(batter_2022_df)
 
 
