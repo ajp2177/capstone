@@ -102,7 +102,7 @@ if check_password():
     difference = st.number_input("Salary Difference", help = note)
     
 
-    age = st.slider('Age', 18, 45, 25)
+    age = st.slider('Age', 18, 50, 27)
 
 
     hits = st.slider('Hits', 0, 250, 100)
@@ -111,19 +111,19 @@ if check_password():
     runs= st.slider('Runs', 0, 200, 50)
 
 
-    rbi = st.slider('RBIs', 0, 200, 75)
+    rbi = st.slider('RBIs', 0, 200, 60)
 
 
-    walks = st.slider('Walks', 0, 250, 50)
+    walks = st.slider('Walks', 0, 250, 60)
 
 
-    so = st.slider('Strikeouts', 0, 250, 50)
+    so = st.slider('Strikeouts', 0, 250, 75)
 
 
-    sb = st.slider('Stolen Bases', 0, 100, 10)
+    sb = st.slider('Stolen Bases', 0, 100, 12)
 
 
-    ops = st.number_input("Enter OPS")
+    ops = st.number_input("Input OPS value")
 
     if st.button("Predict Salary"):
 
