@@ -46,6 +46,8 @@ if check_password():
 
 
   if choice == "Home":
+    st.sidebar.markdown("**Help:** ")
+            learn =  st.sidebar.selectbox("What would you like to learn more about?", listo)
     st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
     st.image('https://www.sportico.com/wp-content/uploads/2022/04/Valuation_List_1280x720-1.png?w=1280&h=720&crop=1')
