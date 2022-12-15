@@ -59,6 +59,9 @@ if check_password():
     tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
     
     with tab1:
+         option = st.selectbox(
+                    'Select a feature to explore:',
+                    ('View dataset', 'Generate profile report','Descriptive statistics'))
         if option == "View dataset":
                         #dataframe = st.dataframe(churn)
 
