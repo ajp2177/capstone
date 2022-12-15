@@ -181,7 +181,7 @@ if check_password():
 
         batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
                                                           'Predicted Salary':'Predicted Salary ($ Millions)',
-                                                          'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
+                                                          'Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
         st.dataframe(batter_2022_df)
 
