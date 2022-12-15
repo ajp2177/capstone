@@ -92,7 +92,7 @@ if check_password():
        
     
   
-  elif choice == "Predict Player Salary":
+    elif choice == "Predict Player Salary":
 
     st.markdown("<h1 style='text-align: center; color: green;'>Predict Player Salary</h1>", unsafe_allow_html=True)
     st.image("capstonehome.jpeg", use_column_width= 'always')
