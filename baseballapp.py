@@ -95,6 +95,8 @@ if check_password():
     
     st.markdown("<h1 style='text-align: center; color: green;'>Predicting MLB Player Salaries</h1>", unsafe_allow_html=True)
     
+    st.markdown("Enter or slide the player performance values then click Predict Salary")
+    
     difference = st.number_input("Salary Difference")
 
 
