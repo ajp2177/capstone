@@ -71,7 +71,7 @@ if check_password():
                 return df.to_csv(index=False).encode('utf-8')
 
 
-            csv = convert_df(churn)
+            csv = convert_df(df)
 
             st.download_button(
                 "Download telco dataset",
