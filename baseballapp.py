@@ -93,6 +93,58 @@ if check_password():
             
 if choice == "Predict Player Salary":
     
+    difference = st.number_input("Salary Difference")
+
+
+age = st.slider('Age', 18, 45, 27)
+
+
+hits = st.slider('Hits', 0, 250, 100)
+
+
+runs= st.slider('Runs', 0, 200, 50)
+
+
+rbi = st.slider('RBIs', 0, 200, 75)
+
+
+walks = st.slider('Walks', 0, 250, 50)
+
+
+so = st.slider('Strikeouts', 0, 250, 50)
+
+sb = st.slider('Stolen Bases', 0, 100, 10)
+
+
+ops = st.number_input("Enter OPS")
+
+# if button is pressed
+if st.button("Predict Salary"):
+
+    # unpickle the batting model
+    bb_model = joblib.load("batting_basic_model")
+
+    # store inputs into df
+
+    column_names = ['Salary Difference', 'Age', 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']
+    df = pd.DataFrame([[difference, age, hits, runs, rbi, walks, so, sb, ops]], 
+                     columns = column_names)
+
+    # get prediction
+    prediction = bb_model.predict(df)
+
+    # convert prediction
+    converted = round(np.exp(prediction)[0],0)
+
+    with st.spinner('Calculating...'):
+        time.sleep(1)
+    st.success('Done!')
+
+    st.dataframe(df)
+
+    # output prediction
+    st.header(f"Predicted Player Salary: ${converted:,}")
+    
     st.markdown("### Predictions compared to 2022 data")
 
 
