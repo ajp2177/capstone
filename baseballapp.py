@@ -207,7 +207,11 @@ if check_password():
             "text/csv",
             key='download-csv'
         )
-    st.download_button("Download")
+    st.download_button("Download predictions",
+            csv,
+            "player_salary_comparison.csv",
+            "text/csv",
+            key='download-csv')
        
 
 
