@@ -138,7 +138,6 @@ if check_password():
 
           # get prediction
         prediction = bb_model.predict(df)
-        st.write(prediction)
 
         # convert prediction
         converted = round(np.exp(prediction)[0],0)
@@ -152,7 +151,7 @@ if check_password():
 
         # output prediction
         st.header(f"Predicted Player Salary: ${converted:,}")
-        #st.header("Predicted Player Salary:", prediction)
+        
 
 
 
