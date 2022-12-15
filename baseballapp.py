@@ -40,7 +40,7 @@ if check_password():
     
   st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
 
-  pages = ["Home", "Plots", "Predict Player Salary"]
+  pages = ["Home", "Data Exploration", "Predict Player Salary"]
   message = '''Select one of the options in the dropdown list to access specific page'''
   choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
   listo = ['','Page Description', 'How to access different pages', 'About app']
@@ -54,6 +54,11 @@ if check_password():
 
     st.markdown("This application provides a model to predict the salary that should be given to players based on performance metrics.", unsafe_allow_html=True)
 
+    
+  elif choice == "Data Exploration":
+    tab1, tab2 = st.tabs(["Intial Exploratory Analysis", "Plots"])
+    
+  
   elif choice == "Predict Player Salary":
 
     st.markdown("<h1 style='text-align: center; color: green;'>Predict Player Salary</h1>", unsafe_allow_html=True)
