@@ -59,10 +59,6 @@ if check_password():
     tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
     
     with tab1:
-        option = st.selectbox(
-                    'Select a feature to explore:',
-                    ('View dataset'))
-        if option == "View dataset":
             df = pd.read_csv('batting_basic')
             dataframe = st.dataframe(df)
 
@@ -96,9 +92,8 @@ if check_password():
             st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
             
             
-# header
-st.markdown("### How do the predictions compare to 2022 stats thus far?")
-st.markdown("###### Updated: Aug 24, 2022")
+st.markdown("### Predictions compared to 2022 data")
+
 
 # 2022 batter dataframe
 batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
