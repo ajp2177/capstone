@@ -193,7 +193,7 @@ if check_password():
                                                        'Predicted Salary':'Predicted Salary ($ Millions)',
                                                        'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
-
+      st.dataframe(batter_2022)
 
       selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
 
