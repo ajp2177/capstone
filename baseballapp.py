@@ -63,7 +63,7 @@ if check_password():
                     'Select a feature to explore:',
                     ('View dataset', 'Generate profile report','Descriptive statistics'))
         if option == "View dataset":
-            df = pd.read_csv('batting_basic.csv')
+            df = pd.read_csv('batting_basic')
             dataframe = st.dataframe(df)
 
             @st.experimental_memo
