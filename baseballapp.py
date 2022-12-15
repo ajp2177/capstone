@@ -90,7 +90,7 @@ if check_password():
             st.image("Screen Shot 2022-12-14 at 11.01.57 PM.png")
             
         elif sc == 'Boxplots':
-            st.image('
+            st.image("Screen Shot 2022-12-14 at 11.16.28 PM.png")
         
         elif sc == 'Position Group Totals':
             st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
