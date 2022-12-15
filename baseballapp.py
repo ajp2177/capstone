@@ -141,7 +141,7 @@ if check_password():
         st.write(prediction)
 
         # convert prediction
-        #converted = round(np.exp(prediction)[0],0)
+        converted = round(np.exp(prediction)[0],0)
         #converted = np.exp(prediction)
 
         with st.spinner('Calculating...'):
@@ -151,7 +151,7 @@ if check_password():
         st.dataframe(df)
 
         # output prediction
-        #st.header(f"Predicted Player Salary: ${converted:,}")
+        st.header(f"Predicted Player Salary: ${converted:,}")
         #st.header("Predicted Player Salary:", prediction)
 
 
