@@ -91,95 +91,95 @@ if check_password():
         elif sc == 'Position Group Totals':
             st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
             
-if choice == "Predict Player Salary":
+    elif choice == "Predict Player Salary":
     
-    difference = st.number_input("Salary Difference")
+        difference = st.number_input("Salary Difference")
 
 
-age = st.slider('Age', 18, 45, 27)
+    age = st.slider('Age', 18, 45, 27)
 
 
-hits = st.slider('Hits', 0, 250, 100)
+    hits = st.slider('Hits', 0, 250, 100)
 
 
-runs= st.slider('Runs', 0, 200, 50)
+    runs= st.slider('Runs', 0, 200, 50)
 
 
-rbi = st.slider('RBIs', 0, 200, 75)
+    rbi = st.slider('RBIs', 0, 200, 75)
 
 
-walks = st.slider('Walks', 0, 250, 50)
+    walks = st.slider('Walks', 0, 250, 50)
 
 
-so = st.slider('Strikeouts', 0, 250, 50)
+    so = st.slider('Strikeouts', 0, 250, 50)
 
-sb = st.slider('Stolen Bases', 0, 100, 10)
-
-
-ops = st.number_input("Enter OPS")
-
-# if button is pressed
-if st.button("Predict Salary"):
-
-    # unpickle the batting model
-    bb_model = joblib.load("batting_basic_model")
-
-    # store inputs into df
-
-    column_names = ['Salary Difference', 'Age', 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']
-    df = pd.DataFrame([[difference, age, hits, runs, rbi, walks, so, sb, ops]], 
-                     columns = column_names)
-
-    # get prediction
-    prediction = bb_model.predict(df)
-
-    # convert prediction
-    converted = round(np.exp(prediction)[0],0)
-
-    with st.spinner('Calculating...'):
-        time.sleep(1)
-    st.success('Done!')
-
-    st.dataframe(df)
-
-    # output prediction
-    st.header(f"Predicted Player Salary: ${converted:,}")
-    
-    st.markdown("### Predictions compared to 2022 data")
+    sb = st.slider('Stolen Bases', 0, 100, 10)
 
 
-    # 2022 batter dataframe
-    batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
-    # reformat 2022 batter df for model prediction
-    df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
+    ops = st.number_input("Enter OPS")
 
-    # load in model
-    bb_model = joblib.load("batting_basic_model.pkl")
+    # if button is pressed
+    if st.button("Predict Salary"):
 
-    # make prediction
-    predictions_2022 = bb_model.predict(df_to_predict)
+        # unpickle the batting model
+        bb_model = joblib.load("batting_basic_model")
 
-    # Add prediction column
-    batter_2022_df["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+        # store inputs into df
 
-    # Add value column
-    batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
-    batter_2022_df.loc[batter_2022_df['Predicted Salary'] < batter_2022_df['2022 Salary'], 'Value?'] = 'Over-valued'
+        column_names = ['Salary Difference', 'Age', 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']
+        df = pd.DataFrame([[difference, age, hits, runs, rbi, walks, so, sb, ops]], 
+                         columns = column_names)
 
-    # reorder columns
-    batter_2022_df = batter_2022_df[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
-                                    'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']]
+        # get prediction
+        prediction = bb_model.predict(df)
 
-    # formatting as Millions
-    batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary'].div(1000000).round(2)
-    batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary'].div(1000000).round(2)
-    batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference'].div(1000000).round(2)
+        # convert prediction
+        converted = round(np.exp(prediction)[0],0)
 
-    batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
-                                                      'Predicted Salary':'Predicted Salary ($ Millions)',
-                                                      'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
+        with st.spinner('Calculating...'):
+            time.sleep(1)
+        st.success('Done!')
 
-    st.dataframe(batter_2022_df)
+        st.dataframe(df)
+
+        # output prediction
+        st.header(f"Predicted Player Salary: ${converted:,}")
+
+        st.markdown("### Predictions compared to 2022 data")
+
+
+        # 2022 batter dataframe
+        batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
+        # reformat 2022 batter df for model prediction
+        df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
+
+        # load in model
+        bb_model = joblib.load("batting_basic_model.pkl")
+
+        # make prediction
+        predictions_2022 = bb_model.predict(df_to_predict)
+
+        # Add prediction column
+        batter_2022_df["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+
+        # Add value column
+        batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
+        batter_2022_df.loc[batter_2022_df['Predicted Salary'] < batter_2022_df['2022 Salary'], 'Value?'] = 'Over-valued'
+
+        # reorder columns
+        batter_2022_df = batter_2022_df[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
+                                        'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']]
+
+        # formatting as Millions
+        batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary'].div(1000000).round(2)
+        batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary'].div(1000000).round(2)
+        batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference'].div(1000000).round(2)
+
+        batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
+                                                          'Predicted Salary':'Predicted Salary ($ Millions)',
+                                                          'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
+
+        st.dataframe(batter_2022_df)
 
 
            
