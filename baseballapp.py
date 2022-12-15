@@ -207,7 +207,7 @@ if check_password():
             "text/csv",
             key='download-csv'
         )
-        
+    st.download_button("Download)
        
 
 
