@@ -101,7 +101,7 @@ batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
 df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
 
 # load in model
-bb_model = joblib.load("pkl/bb_model.pkl")
+bb_model = joblib.load("batting_basic_model.pkl")
 
 # make prediction
 predictions_2022 = bb_model.predict(df_to_predict)
