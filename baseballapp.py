@@ -99,7 +99,7 @@ if check_password():
                         get an estimated salary value.")
 
     note = "Average Salary Difference is the average increase/decrease of a salary across a player's entire career."
-    difference = st.number_input("Average Salary Difference (in $)", help = note)
+    difference = st.number_input("Salary Difference", help = note)
     
 
     age = st.slider('Age', 18, 45, 25)
