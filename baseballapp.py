@@ -56,7 +56,7 @@ if check_password():
 
     
   elif choice == "Data Exploration":
-    tab1, tab2 = st.tabs(["Intial Exploratory Analysis", "Plots"])
+    tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
     
   
   elif choice == "Predict Player Salary":
