@@ -192,8 +192,8 @@ if check_password():
       batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
                                                        'Predicted Salary':'Predicted Salary ($ Millions)',
                                                        'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
-st.dataframe(batter_2022_df)
 
+      st.dataframe(batter_2022_df)
       selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
 
       selected_reward_price = batter_2022_df.loc[batter_2022_df.Name == selected_reward].iloc[0:13]
