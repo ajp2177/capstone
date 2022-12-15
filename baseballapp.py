@@ -61,7 +61,7 @@ if check_password():
     with tab1:
         option = st.selectbox(
                     'Select a feature to explore:',
-                    ('View dataset', 'Generate profile report','Descriptive statistics'))
+                    ('View dataset'))
         if option == "View dataset":
             df = pd.read_csv('batting_basic')
             dataframe = st.dataframe(df)
@@ -74,7 +74,7 @@ if check_password():
             csv = convert_df(df)
 
             st.download_button(
-                "Download telco dataset",
+                "Download dataset",
                 csv,
                 "file.csv",
                 "text/csv",
