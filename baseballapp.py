@@ -153,37 +153,37 @@ if check_password():
 
 
         # 2022 batter dataframe
-        batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
+        data_2022 = pd.read_csv('batting_merged_2022', index_col = 0)
         # reformat 2022 batter df for model prediction
-        df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
+        df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
 
         # load in model
-        bb_model = joblib.load("batting_basic_model.pkl")
+        model = joblib.load("batting_basic_model.pkl")
 
         # make prediction
-        predictions_2022 = bb_model.predict(df_to_predict)
+        predictions_2022 = model.predict(df_to_predict)
 
         # Add prediction column
-        batter_2022_df["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+        data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
 
         # Add value column
-        batter_2022_df.loc[batter_2022_df['Predicted Salary'] > batter_2022_df['2022 Salary'], 'Value?'] = 'Under-valued'
-        batter_2022_df.loc[batter_2022_df['Predicted Salary'] < batter_2022_df['2022 Salary'], 'Value?'] = 'Over-valued'
+        data_2022.loc[data_2022['Predicted Salary'] > data_2022['2022 Salary'], 'Value?'] = 'Under-valued'
+        data_2022.loc[data_2022['Predicted Salary'] < data_2022['2022 Salary'], 'Value?'] = 'Over-valued'
 
         # reorder columns
-        batter_2022_df = batter_2022_df[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
+        data_2022 = data_2022[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'Age', \
                                         'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']]
 
         # formatting as Millions
-        batter_2022_df['2022 Salary'] = batter_2022_df['2022 Salary'].div(1000000).round(2)
-        batter_2022_df['Predicted Salary'] = batter_2022_df['Predicted Salary'].div(1000000).round(2)
-        batter_2022_df['Avg Career Salary Difference'] = batter_2022_df['Avg Career Salary Difference'].div(1000000).round(2)
+        data_2022['2022 Salary'] = data_2022['2022 Salary']
+        data_2022['Predicted Salary'] = data_2022['Predicted Salary']
+        data_2022['Avg Career Salary Difference'] = data_2022['Avg Career Salary Difference']
 
-        batter_2022_df = batter_2022_df.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
+        data_2022 = data_2022.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
                                                           'Predicted Salary':'Predicted Salary ($ Millions)',
                                                           'Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
-        st.dataframe(batter_2022_df)
+        st.dataframe(data_2022)
 
 
            
