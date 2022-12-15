@@ -81,7 +81,7 @@ if check_password():
                 key='download-csv'
             )
         #elif option == "
-      with tab2:  
+    with tab2:  
         sc = st.selectbox("Select a plot to visualize: ", ('Histogram',
                                                                      'Boxplots',
                                                                      "Position Group Totals",
