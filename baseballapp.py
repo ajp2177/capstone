@@ -58,6 +58,25 @@ if check_password():
   elif choice == "Data Exploration":
     tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
     
+    with tab1:
+        if option == "View dataset":
+                        #dataframe = st.dataframe(churn)
+
+                        @st.experimental_memo
+                        def convert_df(churn):
+                            return churn.to_csv(index=False).encode('utf-8')
+
+
+                        csv = convert_df(churn)
+
+                        st.download_button(
+                            "Download telco dataset",
+                            csv,
+                            "file.csv",
+                            "text/csv",
+                            key='download-csv'
+                        )
+    
   
   elif choice == "Predict Player Salary":
 
