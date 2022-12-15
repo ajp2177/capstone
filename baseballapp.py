@@ -127,7 +127,7 @@ if check_password():
 
     ops = st.number_input("Enter OPS")
 
-    if st.button("Submit"):
+    if st.button("Predict Salary"):
 
         # unpickle the batting model
         bb_model = joblib.load("batting_basic_model.pkl")
