@@ -194,22 +194,17 @@ if check_password():
                                                        'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
       st.dataframe(batter_2022_df)
-      selected_reward = st.selectbox("Choose a Player", batter_2022_df.Name, 0)
-
-      selected_reward_price = batter_2022_df.loc[batter_2022_df.Name == selected_reward].iloc[0:13]
-
-      st.dataframe(selected_reward_price)
-
-      def convert_df(churn):
+      
+      def convert_df(data):
         return churn.to_csv(index=False).encode('utf-8')
 
 
-        csv = convert_df(pd.DataFrame(selected_reward_price))
+        csv = convert_df(pd.DataFrame(batter_2022_df))
 
         st.download_button(
             "Download predictions",
             csv,
-            "player_salary.csv",
+            "player_salary_comparison.csv",
             "text/csv",
             key='download-csv'
         )
