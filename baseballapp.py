@@ -98,11 +98,9 @@ if check_password():
     st.markdown("Enter the following statistics for a batter and \
                         get an estimated salary value.")
 
-
-    difference = st.number_input("Average Salary Difference (in $)")
-    st.caption("*Note: Average Salary Difference is the average increase/decrease of a salary across a player's entire career. \
-    For example, Derek Jeter's Average Salary Difference between 2012 and 2013 would be \\$1M if his salary was \\$14M in 2012 and \\$15M in 2013")
-
+    note = "Average Salary Difference is the average increase/decrease of a salary across a player's entire career."
+    difference = st.number_input("Average Salary Difference (in $)", help = note)
+    
 
     age = st.slider('Age', 18, 45, 25)
 
