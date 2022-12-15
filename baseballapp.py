@@ -194,11 +194,11 @@ if check_password():
                                                        'Avg Career Salary Difference':'Avg Career Salary Difference ($ Millions)'})
 
       st.dataframe(batter_2022_df)
-      @st.experimental_memo
-      def convert_df(data):
-        return batter_2022_df.to_csv(index=False).encode('utf-8')
+  @st.experimental_memo
+  def convert_df(data):
+    return batter_2022_df.to_csv(index=False).encode('utf-8')
 
-   csv = convert_df(pd.DataFrame(batter_2022_df))
+  csv = convert_df(pd.DataFrame(batter_2022_df))
 
         st.download_button(
             "Download predictions",
