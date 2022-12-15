@@ -91,9 +91,9 @@ if check_password():
         elif sc == 'Position Group Totals':
             st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
             
-    elif choice == "Predict Player Salary":
+  elif choice == "Predict Player Salary":
     
-        difference = st.number_input("Salary Difference")
+    difference = st.number_input("Salary Difference")
 
 
     age = st.slider('Age', 18, 45, 27)
@@ -122,7 +122,7 @@ if check_password():
     if st.button("Predict Salary"):
 
         # unpickle the batting model
-        bb_model = joblib.load("batting_basic_model")
+        bb_model = joblib.load("batting_basic_model.pkl")
 
         # store inputs into df
 
