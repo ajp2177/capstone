@@ -63,11 +63,12 @@ if check_password():
                     'Select a feature to explore:',
                     ('View dataset', 'Generate profile report','Descriptive statistics'))
         if option == "View dataset":
-            #dataframe = st.dataframe(churn)
+            df = pd.read_csv('batting_basic.csv')
+            dataframe = st.dataframe(df)
 
             @st.experimental_memo
-            def convert_df(churn):
-                return churn.to_csv(index=False).encode('utf-8')
+            def convert_df(df):
+                return df.to_csv(index=False).encode('utf-8')
 
 
             csv = convert_df(churn)
