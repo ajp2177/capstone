@@ -93,9 +93,11 @@ if check_password():
             
   elif choice == "Predict Player Salary":
     
-    st.markdown("<h1 style='text-align: center; color: green;'>Predicting MLB Player Salaries</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: green;'>Predict MLB Player Salaries</h1>", unsafe_allow_html=True)
     
     st.markdown("Enter or slide the player performance values then click Predict Salary")
+    st.image("https://throughthefencebaseball.com/?attachment_id=28282")
+    
     
     difference = st.number_input("Salary Difference")
 
