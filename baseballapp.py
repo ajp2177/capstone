@@ -96,7 +96,7 @@ if check_password():
     st.markdown("<h1 style='text-align: center; color: green;'>Predict MLB Player Salaries</h1>", unsafe_allow_html=True)
     
     st.markdown("Enter or slide the player performance values then click Predict Salary")
-    st.image("https://throughthefencebaseball.com/?attachment_id=28282")
+    st.image("https://cdn.vox-cdn.com/thumbor/BROKHvXvRY7VPqC2opTqGjKIksI=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13688709/TeamsHoardingCash_Getty_Ringer.jpg")
     
     
     difference = st.number_input("Salary Difference")
