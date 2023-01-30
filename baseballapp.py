@@ -102,7 +102,7 @@ if check_password():
     tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
     with tab3:
-        st.markdown("Enter or slide the player performance values then click Predict Salary")
+        st.markdown("Input or slide the hitting performance values then click Predict Salary")
         difference = st.number_input("Salary Difference")
 
 
