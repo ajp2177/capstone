@@ -94,7 +94,7 @@ if check_password():
   elif choice == "Predict Player Salary":
     
     st.markdown("<h1 style='text-align: center; color: green;'>Predict MLB Player Salaries</h1>", unsafe_allow_html=True)
-    
+    st.markdown("<h1 color: green; Predict MLB Player Salaries</h1>"    
     
     st.image("https://cdn.vox-cdn.com/thumbor/BROKHvXvRY7VPqC2opTqGjKIksI=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13688709/TeamsHoardingCash_Getty_Ringer.jpg")
     
