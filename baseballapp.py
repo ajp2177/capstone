@@ -99,8 +99,8 @@ if check_password():
     st.image("https://cdn.vox-cdn.com/thumbor/BROKHvXvRY7VPqC2opTqGjKIksI=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13688709/TeamsHoardingCash_Getty_Ringer.jpg")
     
     
-    tab1, tab2 = st.tabs(["Hitters", "Pitchers"])
-        with tab1:
+    tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
+    with tab3:
     
         difference = st.number_input("Salary Difference")
 
