@@ -18,17 +18,24 @@ if choice == "Login":
     st.markdown("add code")
 
 elif choice == "Request password":
-    st.title("Send password to email")
-    sender = "ajflash21@gmail.com"
-    password = "Offutlake2017"
-    reciever = st.text_input("Enter your email address")
-    button = st.button("Send email")
-    if button:
-        connection =s.SMTP('smtp.gmail.com', 587)
-        connection.starttls()
-        connection.login(sender,password)
-        connection.sendmail(sender, reciever)
-        connection.quit()
+    msg = MIMEMultipart()
+    msg['From'] = "your_email_address"
+    msg['To'] = email
+    msg['Subject'] = "Password Reset"
+    body = f"Dear {username},\n\nYou recently requested a password reset for your account. Please use the following link to reset your password:\n\n{password_reset_link}\n\nIf you did not request a password reset, please ignore this email.\n\nBest regards,\nYour team"
+    msg.attach(MIMEText(body, 'plain'))
+
+    # Send the email
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(msg['From'], "your_email_password")
+    server.sendmail(msg['From'], msg['To'], msg.as_string())
+    server.quit()
+    
+    
+    
+    
+   
         
 
 
