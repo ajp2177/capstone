@@ -12,21 +12,21 @@ from email.mime.text import MIMEText
 
 def send_email(email, username, password_reset_link):
     # Build the email message
-    msg = MIMEMultipart()
-    msg['From'] = "your_email_address"
-    msg['To'] = email
-    msg['Subject'] = "Password Reset"
-    body = f"Dear {username},\n\nYou recently requested a password reset for your account. Please use the following link to reset your password:\n\n{password_reset_link}\n\nIf you did not request a password reset, please ignore this email.\n\nBest regards,\nYour team"
-    msg.attach(MIMEText(body, 'plain'))
+    if st.button("Send Email"):
+        msg = MIMEMultipart()
+        msg['From'] = "your_email_address"
+        msg['To'] = email
+        msg['Subject'] = "Password Reset"
+        body = f"Dear {username},\n\nYou recently requested a password reset for your account. Please use the following link to reset your password:\n\n{password_reset_link}\n\nIf you did not request a password reset, please ignore this email.\n\nBest regards,\nYour team"
+        msg.attach(MIMEText(body, 'plain'))
 
-    # Send the email
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(msg['From'], "your_email_password")
-    server.sendmail(msg['From'], msg['To'], msg.as_string())
-    server.quit()
+        # Send the email
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(msg['From'], "your_email_password")
+        server.sendmail(msg['From'], msg['To'], msg.as_string())
+        server.quit()
     
-if sever.quit(): 
     
     st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
 
