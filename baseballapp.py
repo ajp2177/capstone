@@ -21,9 +21,9 @@ def main():
                 connection.login(sender,password)
                 connection.sendmail(sender, reciever)
                 connection.quit()
-
 if __name__=="__main__":
     main()
+    
 def check_password():
     """Returns `True` if the user had the correct password."""
 
