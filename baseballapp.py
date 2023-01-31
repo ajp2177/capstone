@@ -14,20 +14,22 @@ ebutton = st.button("Send email")
 
 def send_email(email, username, password_reset_link):
     # Build the email message
-    if button:
-        msg = MIMEMultipart()
-        msg['From'] = "your_email_address"
-        msg['To'] = email
-        msg['Subject'] = "Password Reset"
-        body = f"Dear {username},\n\nYou recently requested a password reset for your account. Please use the following link to reset your password:\n\n{password_reset_link}\n\nIf you did not request a password reset, please ignore this email.\n\nBest regards,\nYour team"
-        msg.attach(MIMEText(body, 'plain'))
+        st.title("Send password to email")
+            activities =["Send Email"]
+            choice = st.sidebar.selectbox("Reset Password", activites)
+            if choice == "Send Email":
+                sender = "ajflash21@gmail.com"
+                password = "Offutlake2017"
+                reciever = st.text_input("Enter your email address")
+                if st.buttion("Send Email"):
+                    try:
+                        connection =s.SMTP('smtp.gmail.com', 587)
+                        connection.starttls()
+                        connection.login(sender,password)
+                        connection.sendmail(sender, reciever)
+                        connection.quit()
+        
 
-        # Send the email
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
-        server.login(msg['From'], "your_email_password")
-        server.sendmail(msg['From'], msg['To'], msg.as_string())
-        server.quit()
     
     
     st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
