@@ -6,31 +6,26 @@ import joblib
 import time
 import smtplib as s
 
-    
-import smtplib
-from email.mime.text import MIMEText
+def login():
+    username = st.text_input("Username")
+    password = st.text_input("Password", type='password')
+    if st.button("Submit"):
+        if username == "admin" and password == "admin":
+            st.success("Successful login!")
+        else:
+            st.error("Incorrect username or password")
+    if st.button("Reset password"):
+        reset_password()
 
-st.sidebar.markdown("Welcome to MLB player salary prediction application! Please login or request a new password via email.")
-act = ["Login", "Request password"]
-choice = st.sidebar.selectbox("Reset Password", act)
+def reset_password():
+    st.write("Enter your email address to reset your password:")
+    email = st.text_input("Email")
+    if st.button("Submit"):
+        # send password reset email to the provided email address
+        st.success("Password reset email sent!")
 
-if choice == "Login":
-    st.markdown("add code")
-
-elif choice == "Request password":
-    msg = MIMEMultipart()
-    msg['From'] = "your_email_address"
-    msg['To'] = email
-    msg['Subject'] = "Password Reset"
-    body = f"Dear {username},\n\nYou recently requested a password reset for your account. Please use the following link to reset your password:\n\n{password_reset_link}\n\nIf you did not request a password reset, please ignore this email.\n\nBest regards,\nYour team"
-    msg.attach(MIMEText(body, 'plain'))
-
-    # Send the email
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(msg['From'], "your_email_password")
-    server.sendmail(msg['From'], msg['To'], msg.as_string())
-    server.quit()
+st.title("Login")
+login()
     
     
     
