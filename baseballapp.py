@@ -21,12 +21,11 @@ def send_email():
         password = "Offutlake2017"
         reciever = st.text_input("Enter your email address")
         if st.buttion("Send Email"):
-            try:
-                connection =s.SMTP('smtp.gmail.com', 587)
-                connection.starttls()
-                connection.login(sender,password)
-                connection.sendmail(sender, reciever)
-                connection.quit()
+            connection =s.SMTP('smtp.gmail.com', 587)
+            connection.starttls()
+            connection.login(sender,password)
+            connection.sendmail(sender, reciever)
+            connection.quit()
         
 
 
