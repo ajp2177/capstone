@@ -12,8 +12,7 @@ from email.mime.text import MIMEText
 
 ebutton = st.button("Send email")
 
-def send_email(email, username, password_reset_link):
-    # Build the email message
+def send_email():
     st.title("Send password to email")
     activities =["Send Email"]
     choice = st.sidebar.selectbox("Reset Password", activites)
