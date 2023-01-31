@@ -11,26 +11,24 @@ import smtplib
 from email.mime.text import MIMEText
 
 st.sidebar.markdown("Welcome to MLB player salary prediction application! Please login or request a new password via email.")
-activities =["Send Email"]
+act = ["Login", "Request password"]
 choice = st.sidebar.selectbox("Reset Password", activites)
 
+if choice == "Login":
+    
 
-ebutton = st.button("Send email")
-
-def send_email():
+elif choice == "Request password":
     st.title("Send password to email")
-    activities =["Send Email"]
-    choice = st.sidebar.selectbox("Reset Password", activites)
-    if choice == "Send Email":
-        sender = "ajflash21@gmail.com"
-        password = "Offutlake2017"
-        reciever = st.text_input("Enter your email address")
-        if st.buttion("Send Email"):
-            connection =s.SMTP('smtp.gmail.com', 587)
-            connection.starttls()
-            connection.login(sender,password)
-            connection.sendmail(sender, reciever)
-            connection.quit()
+    sender = "ajflash21@gmail.com"
+    password = "Offutlake2017"
+    reciever = st.text_input("Enter your email address")
+    button = st.button("Send email")
+    if button:
+        connection =s.SMTP('smtp.gmail.com', 587)
+        connection.starttls()
+        connection.login(sender,password)
+        connection.sendmail(sender, reciever)
+        connection.quit()
         
 
 
