@@ -10,9 +10,11 @@ import smtplib as s
 import smtplib
 from email.mime.text import MIMEText
 
+ebutton = st.button("Send email")
+
 def send_email(email, username, password_reset_link):
     # Build the email message
-    if st.button("Send Email"):
+    if button:
         msg = MIMEMultipart()
         msg['From'] = "your_email_address"
         msg['To'] = email
