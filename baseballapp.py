@@ -46,7 +46,6 @@ def check_password():
                         connection.login(sender,password)
                         connection.sendmail(sender, reciever)
                         connection.quit()
-        if __name__=="__main__":
             main()
         return False
     else:
