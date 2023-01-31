@@ -23,7 +23,7 @@ def login():
 def reset_password():
     st.write("Enter your email address to reset your password:")
     email = st.text_input("Email")
-    if st.button("Submit"):
+    if st.button("Enter"):
         # send password reset email to the provided email address
         try:
             server = smtplib.SMTP('smtp.gmail.com', 587)
