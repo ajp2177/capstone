@@ -79,7 +79,7 @@ elif choice == "Data Exploration":
         elif sc == 'Position Group Totals':
             st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
 
-    elif choice == "Predict Player Salary":
+elif choice == "Predict Player Salary":
 
     st.markdown("<h1 style='text-align: left; color: green;'>Predict MLB Player Salaries</h1>", unsafe_allow_html=True)
 
