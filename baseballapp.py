@@ -34,7 +34,7 @@ choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
 listo = ['','Page Description', 'How to access different pages', 'About app']
 
 if choice == "Home":
-st.sidebar.markdown("**Help:** ")
+    st.sidebar.markdown("**Help:** ")
 learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
 st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
