@@ -10,7 +10,11 @@ import smtplib as s
 import smtplib
 from email.mime.text import MIMEText
 
-st.sidebar.markdown("This is the home page of the Churn prediction application")
+st.sidebar.markdown("Welcome to MLB player salary prediction application! Please login or request a new password via email.")
+activities =["Send Email"]
+choice = st.sidebar.selectbox("Reset Password", activites)
+
+
 ebutton = st.button("Send email")
 
 def send_email():
