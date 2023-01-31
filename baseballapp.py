@@ -10,6 +10,7 @@ import smtplib as s
 import smtplib
 from email.mime.text import MIMEText
 
+st.sidebar.markdown("This is the home page of the Churn prediction application")
 ebutton = st.button("Send email")
 
 def send_email():
