@@ -12,7 +12,7 @@ from email.mime.text import MIMEText
 
 st.sidebar.markdown("Welcome to MLB player salary prediction application! Please login or request a new password via email.")
 act = ["Login", "Request password"]
-choice = st.sidebar.selectbox("Reset Password", activites)
+choice = st.sidebar.selectbox("Reset Password", act)
 
 if choice == "Login":
     st.markdown("add code")
