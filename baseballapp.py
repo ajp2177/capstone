@@ -15,7 +15,7 @@ act = ["Login", "Request password"]
 choice = st.sidebar.selectbox("Reset Password", activites)
 
 if choice == "Login":
-    
+    st.markdown("add code")
 
 elif choice == "Request password":
     st.title("Send password to email")
