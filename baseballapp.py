@@ -26,14 +26,14 @@ def reset_password():
     if st.button("Enter"):
         # send password reset email to the provided email address
         try:
-            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server = smtplib.SMTP('ajflash21.gmail.com', 587)
             server.ehlo()
             server.starttls()
-            server.login("<sender's email>", "<email password>")
+            server.login("ajflash21@gmail.com", "Offutlake2017")
             subject = "Password Reset"
             body = "Please follow the link to reset your password: <link to password reset page>"
             msg = f"Subject: {subject}\n\n{body}"
-            server.sendmail("<sender's email>", email, msg)
+            server.sendmail("ajflash21@gmail.com", email, msg)
             st.success("Password reset email sent!")
         except:
             st.error("Failed to send email")
