@@ -6,6 +6,9 @@ import joblib
 import time
 import smtplib as s
 
+import streamlit as st
+import smtplib
+
 def login():
     username = st.text_input("Username")
     password = st.text_input("Password", type='password')
@@ -22,7 +25,20 @@ def reset_password():
     email = st.text_input("Email")
     if st.button("Submit"):
         # send password reset email to the provided email address
-        st.success("Password reset email sent!")
+        try:
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.ehlo()
+            server.starttls()
+            server.login("<sender's email>", "<email password>")
+            subject = "Password Reset"
+            body = "Please follow the link to reset your password: <link to password reset page>"
+            msg = f"Subject: {subject}\n\n{body}"
+            server.sendmail("<sender's email>", email, msg)
+            st.success("Password reset email sent!")
+        except:
+            st.error("Failed to send email")
+        finally:
+            server.quit()
 
 st.title("Login")
 login()
