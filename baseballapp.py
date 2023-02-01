@@ -58,7 +58,8 @@ if check_password():
 
     elif choice == "Data Exploration":
         tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
-
+        if listo == 'Page Description':
+            st.sidebar.markdown('This is the Data Exploration page of the application to view some visualizations regarding the MLB data.) 
         with tab1:
                 df = pd.read_csv('batting_basic')
                 dataframe = st.dataframe(df)
@@ -98,7 +99,8 @@ if check_password():
 
         st.image("https://cdn.vox-cdn.com/thumbor/BROKHvXvRY7VPqC2opTqGjKIksI=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13688709/TeamsHoardingCash_Getty_Ringer.jpg")
 
-
+        if listo == 'Page Description':
+            st.sidebar.markdown('This is the Predict Player page to generate player salaries based on the selected input.) 
         tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
         with tab3:
