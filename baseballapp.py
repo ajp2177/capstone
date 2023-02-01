@@ -96,9 +96,7 @@ if check_password():
 
                 image1 = st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
                 image2 = st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
-
-                # Create a subplot to display the images
-                st.subheader("Two Images Side by Side")
+                
                 fig, (ax1, ax2) = mplt.subplots(1, 2, figsize=(10, 5))
                 ax1.imshow(image1)
                 ax2.imshow(image2)
