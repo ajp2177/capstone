@@ -94,8 +94,8 @@ if check_password():
                     key='download-csv'
                 )
 
-                image1 = Image.open("Screen Shot 2023-02-01 at 3.27.21 PM.png")
-                image2 = Image.open("Screen Shot 2023-02-01 at 3.30.17 PM.png")
+                image1 = st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
+                image2 = st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
 
                 # Create a subplot to display the images
                 st.subheader("Two Images Side by Side")
