@@ -95,7 +95,7 @@ if check_password():
                 )
 
                 image1 = Image.open("Screen Shot 2023-02-01 at 3.27.21 PM.png")
-                image2 = Image.open("image2.jpg")
+                image2 = Image.open("Screen Shot 2023-02-01 at 3.30.17 PM.png")
 
                 # Create a subplot to display the images
                 st.subheader("Two Images Side by Side")
@@ -106,7 +106,7 @@ if check_password():
 
                 # Show the subplot
                 st.pyplot()
-                st.image('Screen Shot 2023-02-01 at 3.27.21 PM.png')
+                #st.image('Screen Shot 2023-02-01 at 3.27.21 PM.png')
         with tab2:  
             sc = st.selectbox("Select a plot to visualize: ", ('Histogram',
                                                                          'Boxplots',
