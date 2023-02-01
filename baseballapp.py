@@ -101,11 +101,14 @@ if check_password():
                                                                          'Most Common MLB Salary Values',
                                                                          "Position Group Totals",
                                                                          ))
+            col1, col2, col3 = st.columns(3)
+
             if sc == 'WAR Stat Values':
                  st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
 
             elif sc == 'Most Common MLB Salary Values':
-                st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png",  width=1800)
+                with col2:
+                    st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png",  width=1000)
 
             elif sc == 'Position Group Totals':
                 st.image("Screen Shot 2023-02-01 at 3.35.46 PM.png")
