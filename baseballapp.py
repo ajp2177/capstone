@@ -94,6 +94,11 @@ if check_password():
                     "text/csv",
                     key='download-csv'
                 )
+                
+                import statistics
+                df2 = pd.read_csv('df2')
+                meansal = statistics.mean(df2.salary)
+                print('The average MLB salary is ', '${:,.2f}'.format(meansal))
 
                 
                 
