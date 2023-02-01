@@ -95,10 +95,9 @@ if check_password():
                     key='download-csv'
                 )
                 
-                import statistics
-                df2 = pd.read_csv('df2')
-                meansal = statistics.mean(df2.salary)
-                print('The average MLB salary is ', '${:,.2f}'.format(meansal))
+                st.markdown('The average MLB salary is  $5,553,397.74')
+                
+
 
                 
                 
