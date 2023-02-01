@@ -93,7 +93,7 @@ if check_password():
                     "text/csv",
                     key='download-csv'
                 )
-            #elif option == "
+                st.image('')
         with tab2:  
             sc = st.selectbox("Select a plot to visualize: ", ('Histogram',
                                                                          'Boxplots',
