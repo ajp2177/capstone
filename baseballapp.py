@@ -78,7 +78,7 @@ if check_password():
         with tab1:
                 df = pd.read_csv('df')
                 dataframe = st.dataframe(df)
-                dataframe = df.drop(df.columns[0], axis=1)
+                
 
                 @st.experimental_memo
                 def convert_df(df):
