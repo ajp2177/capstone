@@ -47,7 +47,7 @@ if check_password():
     if choice == "Home":
         st.sidebar.markdown("**Help:** ")
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
-        if listo == 'Page Description':
+        if learn == 'Page Description':
             st.sidebar.markdown('This is the home page of the application to access other pages including Data Exploration and Predict Player Salary use the "Choose a page" dropdown list above.') 
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
@@ -59,7 +59,7 @@ if check_password():
     elif choice == "Data Exploration":
         tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
-        if listo == 'Page Description':
+        if learn == 'Page Description':
             st.sidebar.markdown('This is the Data Exploration page of the application to view some visualizations regarding the MLB data.') 
         with tab1:
                 df = pd.read_csv('batting_basic')
@@ -100,7 +100,7 @@ if check_password():
 
         st.image("https://cdn.vox-cdn.com/thumbor/BROKHvXvRY7VPqC2opTqGjKIksI=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13688709/TeamsHoardingCash_Getty_Ringer.jpg")
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
-        if listo == 'Page Description':
+        if learn == 'Page Description':
             st.sidebar.markdown('This is the Predict Player page to generate player salaries based on the selected input.') 
         tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
