@@ -94,17 +94,9 @@ if check_password():
                     key='download-csv'
                 )
 
-                image1 = st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
-                image2 = st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
+                st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
+                st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
                 
-                fig, (ax1, ax2) = mplt.subplots(1, 2, figsize=(10, 5))
-                ax1.imshow(image1)
-                ax2.imshow(image2)
-                mplt.tight_layout()
-
-                # Show the subplot
-                st.pyplot()
-                #st.image('Screen Shot 2023-02-01 at 3.27.21 PM.png')
         with tab2:  
             sc = st.selectbox("Select a plot to visualize: ", ('Histogram',
                                                                          'Boxplots',
