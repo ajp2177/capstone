@@ -93,7 +93,7 @@ if check_password():
                     "text/csv",
                     key='download-csv'
                 )
-                st.image('')
+                st.image('Screen Shot 2023-02-01 at 3.27.21 PM.png')
         with tab2:  
             sc = st.selectbox("Select a plot to visualize: ", ('Histogram',
                                                                          'Boxplots',
