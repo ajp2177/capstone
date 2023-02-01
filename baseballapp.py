@@ -6,7 +6,6 @@ import joblib
 import time
 
 
-
 def check_password():
     """Returns `True` if the user had the correct password."""
 
