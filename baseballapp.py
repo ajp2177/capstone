@@ -98,8 +98,8 @@ if check_password():
                 st.markdown('The average MLB salary is  $5,553,397.74')
                 
                 code = '''import statistics
-                meansal = statistics.mean(df2.salary)
-                print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
+meansal = statistics.mean(df2.salary)
+print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 st.markdown("**Code:**")
                 st.code(code, language='python')
                 
