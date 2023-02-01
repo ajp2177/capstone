@@ -76,7 +76,7 @@ if check_password():
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
                                 
         with tab1:
-                df = pd.read_csv('batting_basic')
+                df = pd.read_csv('df2_salary')
                 dataframe = st.dataframe(df)
 
                 @st.experimental_memo
