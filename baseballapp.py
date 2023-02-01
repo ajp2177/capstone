@@ -100,8 +100,8 @@ if check_password():
                 code = '''import statistics
                 meansal = statistics.mean(df2.salary)
                 print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
-                    st.markdown("**Code:**")
-                    st.code(code, language='python')
+                st.markdown("**Code:**")
+                st.code(code, language='python')
                 
 
 
