@@ -94,19 +94,18 @@ if check_password():
                     key='download-csv'
                 )
 
-                st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
-                st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
+                
                 
         with tab2:  
-            sc = st.selectbox("Select a plot to visualize: ", ('Histogram',
-                                                                         'Boxplots',
+            sc = st.selectbox("Select a plot to visualize: ", ('WAR Stat Values',
+                                                                         'Most Common MLB Salary Value',
                                                                          "Position Group Totals",
                                                                          ))
-            if sc == 'Histogram':
-                st.image("Screen Shot 2022-12-14 at 11.01.57 PM.png")
+            if sc == 'WAR Stat Values':
+                 st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
 
-            elif sc == 'Boxplots':
-                st.image("Screen Shot 2022-12-14 at 11.16.28 PM.png")
+            elif sc == 'Most Common MLB Salary Values':
+                st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
 
             elif sc == 'Position Group Totals':
                 st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
