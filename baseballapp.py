@@ -98,7 +98,7 @@ if check_password():
                 
         with tab2:  
             sc = st.selectbox("Select a plot to visualize: ", ('WAR Stat Values',
-                                                                         'Most Common MLB Salary Value',
+                                                                         'Most Common MLB Salary Values',
                                                                          "Position Group Totals",
                                                                          ))
             if sc == 'WAR Stat Values':
