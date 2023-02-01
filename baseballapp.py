@@ -42,7 +42,7 @@ if check_password():
     pages = ["Home", "Data Exploration", "Predict Player Salary"]
     message = '''Select one of the options in the dropdown list to access specific page'''
     choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
-    listo = ['','Page Description', 'Ways to naviage app', 'About app']
+    listo = ['','Page Description', 'Ways to navigate app', 'About app']
 
     if choice == "Home":
         st.sidebar.markdown("**Help:** ")
