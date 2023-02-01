@@ -10,9 +10,9 @@ def check_password():
 
     def password_entered():
         """Checks whether a password entered by the user is correct."""
-        if st.session_state["Gcu2023"] == st.secrets["Gcu2023"]:
+        if st.session_state["password"] == st.secrets["password"]:
             st.session_state["password_correct"] = True
-            del st.session_state["Gcu2023"]  # don't store password
+            del st.session_state["password"]  # don't store password
         else:
             st.session_state["password_correct"] = False
 
@@ -20,13 +20,13 @@ def check_password():
         # First run, show input for password.
         st.subheader("**Enter password to access application**")
         st.text_input(
-            "Password:", type="password", on_change=password_entered, key="Gcu2023"
+            "Password:", type="password", on_change=password_entered, key="password"
         )
         return False
     elif not st.session_state["password_correct"]:
         # Password not correct, show input + error.
         st.text_input(
-            "Password", type="password", on_change=password_entered, key="Gcu2023"
+            "Password", type="password", on_change=password_entered, key="password"
         )
         st.error("Incorrect password, please try again.")
         return False
