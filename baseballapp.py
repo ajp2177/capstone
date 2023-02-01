@@ -107,7 +107,7 @@ if check_password():
                  st.image("Screen Shot 2023-02-01 at 3.27.21 PM.png")
 
             elif sc == 'Most Common MLB Salary Values':
-                with col2:
+                with col1:
                     st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png",  width=1000)
 
             elif sc == 'Position Group Totals':
