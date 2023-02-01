@@ -49,9 +49,9 @@ if check_password():
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         if learn == 'Page Description':
             st.sidebar.markdown('This is the home page of the application to access other pages including Data Exploration and Predict Player Salary use the "Choose a page" dropdown list above.') 
-        elif learn = 'Ways to navigate app':
+        elif learn == 'Ways to navigate app':
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
-        elif learn = 'About app':
+        elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
                                 
                              
@@ -70,9 +70,9 @@ if check_password():
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         if learn == 'Page Description':
             st.sidebar.markdown('This is the Data Exploration page of the application to view some visualizations regarding the MLB data.')
-        elif learn = 'Ways to navigate app':
+        elif learn == 'Ways to navigate app':
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
-        elif learn = 'About app':
+        elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
                                 
         with tab1:
@@ -116,9 +116,9 @@ if check_password():
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         if learn == 'Page Description':
             st.sidebar.markdown('This is the Predict Player page to generate player salaries based on the selected input.') 
-        elif learn = 'Ways to navigate app':
+        elif learn == 'Ways to navigate app':
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
-        elif learn = 'About app':
+        elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
                                 
         tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
