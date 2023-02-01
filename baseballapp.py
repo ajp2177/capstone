@@ -40,8 +40,6 @@ def check_password():
 if check_password():
 
 
-
-
 st.sidebar.info("Welcome, please use dropdown box to navigate to other pages.")
 
 pages = ["Home", "Data Exploration", "Predict Player Salary"]
