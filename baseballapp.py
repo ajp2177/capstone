@@ -49,7 +49,7 @@ if check_password():
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
-        st.image('https://www.sportico.com/wp-content/uploads/2022/04/Valuation_List_1280x720-1.png?w=1280&h=720&crop=1')
+        st.image('http://bronxpinstripes.com/wp-content/uploads/2020/06/MLB-Betting.png')
 
         st.markdown("This application provides a gradient boosting regression model to predict the salary that should be given to players based on performance metrics.", unsafe_allow_html=True)
 
