@@ -47,6 +47,8 @@ if check_password():
     if choice == "Home":
         st.sidebar.markdown("**Help:** ")
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
+        if listo == 'Page Description':
+            st.sidebar.markdown('This is the home page of the application to access other pages including Data Exploration and Predict Player Salary use the "Choose a page" dropdown list above.) 
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
         st.image('http://bronxpinstripes.com/wp-content/uploads/2020/06/MLB-Betting.png')
