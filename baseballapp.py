@@ -42,13 +42,22 @@ if check_password():
     pages = ["Home", "Data Exploration", "Predict Player Salary"]
     message = '''Select one of the options in the dropdown list to access specific page'''
     choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
-    listo = ['','Page Description', 'How to access different pages', 'About app']
+    listo = ['','Page Description', 'Ways to naviage app', 'About app']
 
     if choice == "Home":
         st.sidebar.markdown("**Help:** ")
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         if learn == 'Page Description':
             st.sidebar.markdown('This is the home page of the application to access other pages including Data Exploration and Predict Player Salary use the "Choose a page" dropdown list above.') 
+        elif learn = 'Ways to navigate app':
+            st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
+        elif learn = 'About app':
+            st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
+                                
+                             
+        
+        
+        
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
         st.image('http://bronxpinstripes.com/wp-content/uploads/2020/06/MLB-Betting.png')
@@ -60,7 +69,12 @@ if check_password():
         tab1, tab2 = st.tabs(["Exploratory Analysis", "Data Visualizations"])
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         if learn == 'Page Description':
-            st.sidebar.markdown('This is the Data Exploration page of the application to view some visualizations regarding the MLB data.') 
+            st.sidebar.markdown('This is the Data Exploration page of the application to view some visualizations regarding the MLB data.')
+        elif learn = 'Ways to navigate app':
+            st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
+        elif learn = 'About app':
+            st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
+                                
         with tab1:
                 df = pd.read_csv('batting_basic')
                 dataframe = st.dataframe(df)
@@ -102,6 +116,11 @@ if check_password():
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
         if learn == 'Page Description':
             st.sidebar.markdown('This is the Predict Player page to generate player salaries based on the selected input.') 
+        elif learn = 'Ways to navigate app':
+            st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
+        elif learn = 'About app':
+            st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
+                                
         tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
         with tab3:
