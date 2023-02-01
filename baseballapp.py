@@ -108,7 +108,7 @@ if check_password():
                 st.image("Screen Shot 2023-02-01 at 3.30.17 PM.png")
 
             elif sc == 'Position Group Totals':
-                st.image("Screen Shot 2022-12-14 at 11.10.29 PM.png")
+                st.image("Screen Shot 2023-02-01 at 3.35.46 PM.png")
 
     elif choice == "Predict Player Salary":
 
