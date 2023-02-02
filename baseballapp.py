@@ -164,7 +164,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             if st.button("Predict Salary"):
 
                 # unpickle the batting model
-                bb_model = joblib.load("batting_basic_model.pkl")
+                bb_model = joblib.load("df_model.pkl")
 
                 # store inputs into df
 
@@ -195,7 +195,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
 
                 # load in model
-                model = joblib.load("batting_basic_model.pkl")
+                model = joblib.load("df_model.pkl")
 
                 # make prediction
                 predictions_2022 = model.predict(df_to_predict)
