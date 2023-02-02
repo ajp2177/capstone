@@ -95,7 +95,7 @@ if check_password():
                     key='download-csv'
                 )
                 
-                st.markdown('**The average MLB salary is  $5,553,397.74**')
+                st.markdown('<h1>**The average MLB salary is  $5,553,397.74**,</h1>')
                 
                 code = '''import statistics
 meansal = statistics.mean(df2.salary)
