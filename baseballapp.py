@@ -11,7 +11,6 @@ def check_password():
     if "password_correct" not in st.session_state:
         st.subheader("**Enter password to access application**")
         password = st.text_input("Password:", type="password", key="password")
-        if st.button("Submit"):
             if password == st.secrets["password"]:
                 st.session_state["password_correct"] = True
             else:
@@ -20,7 +19,6 @@ def check_password():
         return False
     elif not st.session_state["password_correct"]:
         password = st.text_input("Password:", type="password", key="password")
-        if st.button("Submit"):
             if password == st.secrets["password"]:
                 st.session_state["password_correct"] = True
             else:
