@@ -150,7 +150,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
             infobp ='''OBP ranges from .200 to 0.550'''
                     
-            obp = st.number_input('Enter OBP', min_value=0.200, max_value=0.550, value=0.331, help=infoobp)
+            obp = st.number_input('Enter OBP', min_value=0.200, max_value=0.550, value=0.331, help=infobp)
             
             infops ='''OBS ranges from .555 to 1.425'''
             
