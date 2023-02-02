@@ -11,18 +11,18 @@ def check_password():
     if "password_correct" not in st.session_state:
         st.subheader("**Enter password to access application**")
         password = st.text_input("Password:", type="password", key="password")
-            if password == st.secrets["password"]:
-                st.session_state["password_correct"] = True
-            else:
-                st.session_state["password_correct"] = False
-                st.error("Invalid password, please try again.")
+        if password == st.secrets["password"]:
+            st.session_state["password_correct"] = True
+        else:
+            st.session_state["password_correct"] = False
+            st.error("Invalid password, please try again.")
         return False
     elif not st.session_state["password_correct"]:
         password = st.text_input("Password:", type="password", key="password")
-            if password == st.secrets["password"]:
-                st.session_state["password_correct"] = True
-            else:
-                st.error("Invalid password, please try again.")
+        if password == st.secrets["password"]:
+            st.session_state["password_correct"] = True
+        else:
+            st.error("Invalid password, please try again.")
         return False
     else:
         return True
