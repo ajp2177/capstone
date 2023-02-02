@@ -33,7 +33,10 @@ def check_password():
     else:
         # Password correct.
         return True
-#Streamlit. (n.d.). *Authentication Without SSO*. Streamlit. https://docs.streamlit.io/knowledge-base/deploy/authentication-without-sso
+    
+import markdown
+
+markdown.markdown('Streamlit. (n.d.). *Authentication Without SSO*. Streamlit. https://docs.streamlit.io/knowledge-base/deploy/authentication-without-sso')
 
 
 if check_password():
