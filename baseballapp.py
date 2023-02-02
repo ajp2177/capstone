@@ -211,7 +211,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 st.dataframe(data_2022)
 
 
-           with tab4: 
+        with tab4: 
             st.markdown("Input or slide the pitching performance values then click Predict Salary")
             # input bar 2
             age = st.slider('Age', 18, 45, 25)
