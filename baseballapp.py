@@ -135,75 +135,75 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
         st.markdown('**Select the Hitters or Pitchers tab to predict player salaries**')                       
-        tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
+        #tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
-        with tab3:
-            st.markdown("Input or slide the hitting performance values then click Predict Salary")
+        #with tab3:
+        st.markdown("Input or slide the hitting performance values then click Predict Salary")
 
-            age = st.slider('Age', 18, 45, 27)
-
-
-            bb = st.slider('BB', 0, 140, 70)
+        age = st.slider('Age', 18, 45, 27)
 
 
-            rbis = st.slider('RBIs', 0, 140, 50)
-
-           
-            ibb = st.slider('Intentional Walks', 0, 20, 5)
-
-            hr = st.slider('HR', 0, 65, 10)
-            
-            infobp ='''OBP ranges from .200 to 0.550'''
-                    
-            obp = st.number_input('Enter OBP', min_value=0.200, max_value=0.550, value=0.331, help=infobp)
-            
-            infops ='''OBS ranges from .555 to 1.425'''
-            
-            ops = st.number_input("OPS", min_value=0.555, max_value=1.425, value=0.800, help=infops)
-            
-            sd = st.number_input("Salary Difference")
+        bb = st.slider('BB', 0, 140, 70)
 
 
-            # if button is pressed
-            if st.button("Predict Salary"):
+        rbis = st.slider('RBIs', 0, 140, 50)
 
-                # unpickle the batting model
-                bb_model = joblib.load("df_model.pkl")
 
-                # store inputs into df
+        ibb = st.slider('Intentional Walks', 0, 20, 5)
 
-                cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
-                df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
+        hr = st.slider('HR', 0, 65, 10)
 
-                # get prediction
-                prediction = bb_model.predict(df)
+        infobp ='''OBP ranges from .200 to 0.550'''
 
-                # convert prediction
-                converted = round(np.exp(prediction)[0],0)
+        obp = st.number_input('Enter OBP', min_value=0.200, max_value=0.550, value=0.331, help=infobp)
 
-                st.dataframe(df)
+        infops ='''OBS ranges from .555 to 1.425'''
 
-                # output prediction
-                st.header(f"Predicted Player Salary: ${converted:,}")
+        ops = st.number_input("OPS", min_value=0.555, max_value=1.425, value=0.800, help=infops)
 
-                st.markdown("### Predictions compared to 2022 data")
-                
-                
-                # 2022 batter dataframe
-                data_2022 = pd.read_csv('2022_data', index_col = 0)
-                # reformat 2022 batter df for model prediction
-                df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
+        sd = st.number_input("Salary Difference")
 
-                # load in model
-                model = joblib.load("df_model.pkl")
 
-                 # make prediction
-                predictions_2022 = model.predict(df_to_predict)
+        # if button is pressed
+        if st.button("Predict Salary"):
 
-                # Add prediction column
-                data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+            # unpickle the batting model
+            bb_model = joblib.load("df_model.pkl")
 
-        
-                st.dataframe(data_2022)
+            # store inputs into df
+
+            cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
+            df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
+
+            # get prediction
+            prediction = bb_model.predict(df)
+
+            # convert prediction
+            converted = round(np.exp(prediction)[0],0)
+
+            st.dataframe(df)
+
+            # output prediction
+            st.header(f"Predicted Player Salary: ${converted:,}")
+
+            st.markdown("### Predictions compared to 2022 data")
+
+
+            # 2022 batter dataframe
+            data_2022 = pd.read_csv('2022_data', index_col = 0)
+            # reformat 2022 batter df for model prediction
+            df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
+
+            # load in model
+            model = joblib.load("df_model.pkl")
+
+             # make prediction
+            predictions_2022 = model.predict(df_to_predict)
+
+            # Add prediction column
+            data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+
+
+            st.dataframe(data_2022)
 
     
