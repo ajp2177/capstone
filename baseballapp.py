@@ -195,25 +195,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             last_season["Predicted Salary"] = np.around(np.exp(new_pred),0)
 
             #display comparisions
-            dfc = st.dataframe(last_season)
             st.dataframe(last_season)
             
-            df = pd.read_csv('dfc')
-            dataframe = st.dataframe(df)
-
-                @st.experimental_memo
-                def convert_df(df):
-                    return df.to_csv(index=False).encode('utf-8')
-
-
-                csv = convert_df(df)
-
-                st.download_button(
-                    "Download dataset",
-                    csv,
-                    "file.csv",
-                    "text/csv",
-                    key='download-csv'
-                )
 
     
