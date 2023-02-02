@@ -205,7 +205,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 predictions_2022 = model.predict(df_to_predict)
 
                 # Add prediction column
-                data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+                data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0) - 5,000,000
 
                 # Add value column
                 data_2022.loc[data_2022['Predicted Salary'] > data_2022['2022 Salary'], 'Value?'] = 'Under-valued'
