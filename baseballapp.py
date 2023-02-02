@@ -168,44 +168,33 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
         # if button is pressed
         if st.button("Predict Salary"):
-
-            # unpickle the batting model
-            bb_model = joblib.load("df_model.pkl")
-
-            # store inputs into df
+            gbr = joblib.load("df_model.pkl")
 
             cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
             df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
-
-            # get prediction
-            prediction = bb_model.predict(df)
-
-            # convert prediction
-            converted = round(np.exp(prediction)[0],0)
+            #use gradient boosting regression model to predict salary
+            grb_pred = gbr.predict(df)
+            #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
+            pred = round(np.exp(grb_pred)[0],0)
 
             st.dataframe(df)
-
-            # output prediction
-            st.header(f"Predicted Player Salary: ${converted:,}")
+            #display the predicted salary 
+            st.header("Player Salary Prediction $" + format(pred, ","))
 
             st.markdown("### Predictions compared to 2022 data")
-
-
-            # 2022 batter dataframe
-            data_2022 = pd.read_csv('2022_data', index_col = 0)
+            #utilize 2022 data from baseball-reference
+            last_season = pd.read_csv('2022_data', index_col = 0)
             # reformat 2022 batter df for model prediction
-            df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
+            df_to_predict = last_season.drop(columns = ['Name', '2022 Salary'])
 
             # load in model
-            model = joblib.load("df_model.pkl")
+            gbr_m = joblib.load("df_model.pkl")
 
-             # make prediction
-            predictions_2022 = model.predict(df_to_predict)
+            new_pred = gbr_m.predict(df_to_predict)
 
-            # Add prediction column
-            data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+            last_season["Predicted Salary"] = np.around(np.exp(new_pred),0)
 
-
+            #display comparisions
             st.dataframe(data_2022)
 
     
