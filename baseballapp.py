@@ -139,30 +139,26 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
         with tab3:
             st.markdown("Input or slide the hitting performance values then click Predict Salary")
-            difference = st.number_input("Salary Difference")
-
 
             age = st.slider('Age', 18, 45, 27)
 
 
-            hits = st.slider('Hits', 0, 250, 100)
+            walks = st.slider('BB', 0, 250, 100)
 
 
-            runs= st.slider('Runs', 0, 200, 50)
+            rbis = st.slider('RBIs', 0, 200, 50)
 
 
-            rbi = st.slider('RBIs', 0, 200, 75)
-
-
-            walks = st.slider('Walks', 0, 250, 50)
-
-
-            so = st.slider('Strikeouts', 0, 250, 50)
-
-            sb = st.slider('Stolen Bases', 0, 100, 10)
-
-
+            obp = st.slider('OBP', 0, 200, 75)
+            
             ops = st.number_input("Enter OPS")
+
+            ibb = st.slider('Intentional Walks', 0, 250, 50)
+
+            hr = st.slider('HR', 0, 100, 10)
+            
+            sd = st.number_input("Salary Difference")
+
 
             # if button is pressed
             if st.button("Predict Salary"):
@@ -172,8 +168,8 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
                 # store inputs into df
 
-                column_names = ['Salary Difference', 'Age', 'H', 'R', 'RBI', 'BB', 'SO', 'SB', 'OPS']
-                df = pd.DataFrame([[difference, age, hits, runs, rbi, walks, so, sb, ops]], 
+                column_names = [''age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd'']
+                df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], 
                                  columns = column_names)
 
                 # get prediction
