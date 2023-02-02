@@ -181,10 +181,6 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 # convert prediction
                 converted = round(np.exp(prediction)[0],0)
 
-                with st.spinner('Calculating...'):
-                    time.sleep(1)
-                st.success('Done!')
-
                 st.dataframe(df)
 
                 # output prediction
@@ -209,68 +205,5 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
         
                 st.dataframe(data_2022)
-
-
-        with tab4: 
-            st.markdown("Input or slide the pitching performance values then click Predict Salary")
-            difference = st.number_input("*Average Salary Difference (in $)")
-            # input bar 2
-            age = st.slider('Age', 18, 45, 25)
-
-            # input bar 3
-            wins = st.slider('Wins', 0, 25, 10)
-
-            # input bar 4
-            losses = st.slider('Losses', 0, 25, 10)
-
-            # input bar 5
-            era = st.number_input('ERA')
-
-            # input bar 6
-            games = st.slider('Games Played', 0, 100, 30)
-
-            # input bar 7
-            saves = st.slider('Saves', 0, 50, 0)
-
-            # input bar 8
-            ip = st.slider('Innings Pitched', 0, 350, 150)
-
-            # input bar 9
-            hits = st.slider('Hits Allowed', 0, 300, 150)
-
-            # input bar 10
-            hr = st.slider('Homeruns Allowed', 0, 50, 20)
-
-            # input bar 11
-            so = st.slider('Strikeouts', 0, 350, 150)
-
-            # input bar 12
-            bb = st.slider('Walks', 0, 100, 40)
-
-            # if button is pressed
-            if st.button("Submit"):
-
-                # unpickle the batting model
-                pb_model = joblib.load("pb_ct_2.pkl")
-
-                # store inputs into df
-                column_names = ['Salary Difference', 'Age', 'W', 'L', 'ERA', 'G', 'SV', 'IP', 'H', 'HR', 'SO', 'BB']
-                df = pd.DataFrame([[difference, age, wins, losses, era, games, saves, ip, hits, hr, so, bb]], 
-                                 columns = column_names)
-
-                # get prediction
-                prediction = pb_model.predict(df)
-
-                # convert prediction
-                converted = round(np.exp(prediction)[0],0)
-
-                with st.spinner('Calculating...'):
-                    time.sleep(1)
-                st.success('Done!')
-
-                st.dataframe(df)
-
-                # output prediction
-                st.header(f"Predicted Player Salary: ${converted:,}")
 
     
