@@ -134,7 +134,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
-        st.markdown('**Select the Hitters or Pitchers to predict player salaries**')                       
+        st.markdown('**Select the Hitters or Pitchers tab to predict player salaries**')                       
         tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
         with tab3:
