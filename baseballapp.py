@@ -208,7 +208,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 data_2022.loc[data_2022['Predicted Salary'] < data_2022['2022 Salary'], 'Value?'] = 'Over-valued'
 
                 # reorder columns
-                data_2022 = data_2022[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'Avg Career Salary Difference', 'age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']]
+                data_2022 = data_2022[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']]
 
                 # formatting as Millions
                 data_2022['2022 Salary'] = data_2022['2022 Salary']
