@@ -250,7 +250,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             if st.button("Submit"):
 
                 # unpickle the batting model
-                pb_model = joblib.load("pb_model.pkl")
+                pb_model = joblib.load("pb_ct_2.pkl")
 
                 # store inputs into df
                 column_names = ['Salary Difference', 'Age', 'W', 'L', 'ERA', 'G', 'SV', 'IP', 'H', 'HR', 'SO', 'BB']
