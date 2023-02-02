@@ -191,6 +191,22 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 st.header(f"Predicted Player Salary: ${converted:,}")
 
                 st.markdown("### Predictions compared to 2022 data")
+                
+                
+                # 2022 batter dataframe
+                data_2022 = pd.read_csv('batting_merged_2022', index_col = 0)
+                # reformat 2022 batter df for model prediction
+                df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
+
+                # load in model
+                model = joblib.load("df_model.pkl")
+
+                # make prediction
+                predictions_2022 = model.predict(df_to_predict)
+                
+                st.dataframe(data_2022)
+
+
 
 
     
