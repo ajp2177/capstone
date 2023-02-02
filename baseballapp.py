@@ -168,9 +168,8 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
                 # store inputs into df
 
-                column_names = [''age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd'']
-                df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], 
-                                 columns = column_names)
+                cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
+                df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
 
                 # get prediction
                 prediction = bb_model.predict(df)
