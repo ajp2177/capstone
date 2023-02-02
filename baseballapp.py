@@ -189,37 +189,6 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 st.markdown("### Predictions compared to 2022 data")
 
 
-                # 2022 batter dataframe
-                data_2022 = pd.read_csv('batting_merged_2022', index_col = 0)
-                # reformat 2022 batter df for model prediction
-                df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
-
-                # load in model
-                model = joblib.load("df_model.pkl")
-
-                # make prediction
-                predictions_2022 = model.predict(df_to_predict)
-
-                # Add prediction column
-                data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
-
-                # Add value column
-                data_2022.loc[data_2022['Predicted Salary'] > data_2022['2022 Salary'], 'Value?'] = 'Under-valued'
-                data_2022.loc[data_2022['Predicted Salary'] < data_2022['2022 Salary'], 'Value?'] = 'Over-valued'
-
-                # reorder columns
-                data_2022 = data_2022[['Name', '2022 Salary', 'Predicted Salary', 'Value?', 'age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']]
-
-                # formatting as Millions
-                data_2022['2022 Salary'] = data_2022['2022 Salary']
-                data_2022['Predicted Salary'] = data_2022['Predicted Salary']
-                data_2022['Avg Career Salary Difference'] = data_2022['Avg Career Salary Difference']
-
-                data_2022 = data_2022.rename(columns = {'2022 Salary':'2022 Salary ($ Millions)',
-                                                                  'Predicted Salary':'Predicted Salary ($ Millions)',
-                                                                  'Salary Difference':'Avg Career Salary Difference ($ Millions)'})
-
-                st.dataframe(data_2022)
     
 
 
