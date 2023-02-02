@@ -194,7 +194,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 
                 
                 # 2022 batter dataframe
-                data_2022 = pd.read_csv('batting_merged_2022', index_col = 0)
+                data_2022 = pd.read_csv('2022_data', index_col = 0)
                 # reformat 2022 batter df for model prediction
                 df_to_predict = data_2022.drop(columns = ['Name', '2022 Salary'])
 
