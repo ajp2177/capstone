@@ -205,7 +205,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 predictions_2022 = model.predict(df_to_predict)
 
                 # Add prediction column
-                data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0)
+                data_2022["Predicted Salary"] = np.around(np.exp(predictions_2022),0))
 
         
                st.dataframe(data_2022)
