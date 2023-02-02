@@ -213,6 +213,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
         with tab4: 
             st.markdown("Input or slide the pitching performance values then click Predict Salary")
+            difference = st.number_input("*Average Salary Difference (in $)")
             # input bar 2
             age = st.slider('Age', 18, 45, 25)
 
