@@ -148,6 +148,11 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
             rbis = st.slider('RBIs', 0, 140, 50)
 
+           
+            ibb = st.slider('Intentional Walks', 0, 20, 5)
+
+            hr = st.slider('HR', 0, 65, 10)
+            
             infobp ='''OBP ranges from .200 to 0.550'''
                     
             obp = st.number_input('Enter OBP', min_value=0.200, max_value=0.550, value=0.331, help=infobp)
@@ -155,10 +160,6 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             infops ='''OBS ranges from .555 to 1.425'''
             
             ops = st.number_input("OPS", min_value=0.555, max_value=1.425, value=0.800, help=infops)
-
-            ibb = st.slider('Intentional Walks', 0, 20, 5)
-
-            hr = st.slider('HR', 0, 65, 10)
             
             sd = st.number_input("Salary Difference")
 
