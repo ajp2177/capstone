@@ -197,13 +197,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #display comparisions
             ls = st.dataframe(last_season)
 
-            st.download_button(
-                "Download predictions",
-                csv,
-                "file.csv",
-                "text/csv",
-                key='download-csv'
-            )
+          
             st.write(ls.to_csv(index=False), 
             file_uploader_type='csv')
 
