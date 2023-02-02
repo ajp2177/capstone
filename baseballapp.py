@@ -200,15 +200,15 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                     return ls.to_csv(index=False).encode('utf-8')
 
 
-                csv = convert_df(pd.DataFrame(ls))
+            csv = convert_df(pd.DataFrame(ls))
 
-                st.download_button(
-                    "Download predictions",
-                    csv,
-                    "file.csv",
-                    "text/csv",
-                    key='download-csv'
-                )
+            st.download_button(
+                "Download predictions",
+                csv,
+                "file.csv",
+                "text/csv",
+                key='download-csv'
+            )
             
 
     
