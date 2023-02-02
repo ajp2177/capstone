@@ -143,7 +143,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             age = st.slider('Age', 18, 45, 27)
 
 
-            walks = st.slider('BB', 0, 250, 100)
+            bb = st.slider('BB', 0, 250, 100)
 
 
             rbis = st.slider('RBIs', 0, 200, 50)
