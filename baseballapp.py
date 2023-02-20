@@ -140,7 +140,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
         #tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
 
         #with tab3:
-        st.markdown("The data used for predicting player salaries comes from Fangraphs and Baseball-Reference. The data does not include any minor league players. Additionally, the data covers a 20 year period ranging from the 2001 to 2021 season. The players included in the dataset had to have a minimum of 350 plate appearances per season.")
+        st.markdown("The data used for predicting player salaries comes from Fangraphs and Baseball-Reference. The data does not include any minor league players. Additionally, the data covers a 20 year period ranging from the 2001 to 2021 season. The players included in the dataset have a minimum of 350 plate appearances per season.")
         st.markdown("**Input or slide the hitting performance values then click Predict Salary**")
 
         age = st.slider('Age', 18, 45, 27)
