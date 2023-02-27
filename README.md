@@ -13,6 +13,4 @@ The Streamlit application can be accessed by using the link: https://ajp2177-cap
 To learn more about the project and Streamlit application, check out my presentation. 
 
 
-
-![predict page](https://user-images.githubusercontent.com/118642994/221667065-9f504688-bc01-4ad8-a494-b22cb883050d.png)
-
+![Screen Shot 2023-02-27 at 11 47 22 AM](https://user-images.githubusercontent.com/118642994/221667380-302e9e1c-6aaa-4d76-aa38-7d69fc4d91f4.png)
