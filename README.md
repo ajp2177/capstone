@@ -5,7 +5,7 @@ In Major League Baseball, players receive millions in guaranteed money each seas
 
 ### Implementation 
 This project uses Gradient Boosting Regression to predict MLB player salaries based on player 
-performance. Juypter Notebook was used to gather the salary and player performance data from Fangraphs and Baseball-Reference. It was also used for necessary steps including data exploration, data cleaning, modeling, and evaluating the model. The model was saved and loaded into the app file found in this repository. The repository provides all the necessary files and images for the Streamlit application. To deploy the application, this GitHub repository was connected with Streamlit Cloud. 
+performance. Juypter Notebook was used to gather the salary and player performance data from Fangraphs and Baseball-Reference. It was also used for necessary steps including data exploration, data cleaning, modeling, and evaluating the model. The model was saved and loaded into the baseballapp.py file found in this repository. The repository provides all the necessary files and images for the Streamlit application. To deploy the application, this GitHub repository was connected with Streamlit Cloud. 
 
 ### Streamlit Application
 The Streamlit application can be accessed by using the link: https://ajp2177-capstone-baseballapp-2ni3m6.streamlit.app/ The application provides the implementation of the Gradient Boosting Regression model to generate predictions based on user input. It also provides features to explore the data used and relevant visualizations. 
