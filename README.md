@@ -10,7 +10,10 @@ performance. Juypter Notebook was used to gather the salary and player performan
 ### Streamlit Application
 The Streamlit application can be accessed by using the link: https://ajp2177-capstone-baseballapp-2ni3m6.streamlit.app/ The application provides the implementation of the Gradient Boosting Regression model to generate predictions based on user input. It also provides features to explore the data used and relevant visualizations. 
 
+
+![Home Page](https://user-images.githubusercontent.com/118642994/221667380-302e9e1c-6aaa-4d76-aa38-7d69fc4d91f4.png)
+
+
+
+
 To learn more about the project and Streamlit application, check out my presentation. 
-
-
-![Screen Shot 2023-02-27 at 11 47 22 AM](https://user-images.githubusercontent.com/118642994/221667380-302e9e1c-6aaa-4d76-aa38-7d69fc4d91f4.png)
