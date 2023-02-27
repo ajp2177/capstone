@@ -16,7 +16,7 @@ To learn more about the project and Streamlit application, check out my presenta
 
 
 
-<img src="predict_page.jpg" alt="Alt text" title="Optional title">
+![My Image](predict page.jpg)
 
 
 
