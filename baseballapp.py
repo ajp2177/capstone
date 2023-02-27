@@ -168,6 +168,15 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
         # if button is pressed
         if st.button("Predict Salary"):
             gbr = joblib.load("df_model.pkl")
+            st.write(
+    '<div style="display:flex; justify-content:center;">'
+    '<button style="align-self:center;">Centered Button</button>'
+    '</div>',
+    unsafe_allow_html=True
+)
+        
+            
+           st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
             cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
             df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
