@@ -178,7 +178,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             # if button is pressed
             if st.button("Predict Salary"):
                 gbr = joblib.load("df_model.pkl")
-        with col1:
+        
                 cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
                 df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
                 #use gradient boosting regression model to predict salary
