@@ -126,7 +126,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
     elif choice == "Predict Player Salary":
 
-        st.markdown("<h1 style='text-align: left; color: green;'>Predict MLB Player Salaries</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: green;'>Predict MLB Player Salaries</h1>", unsafe_allow_html=True)
 
         st.image("https://cdn.vox-cdn.com/thumbor/BROKHvXvRY7VPqC2opTqGjKIksI=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13688709/TeamsHoardingCash_Getty_Ringer.jpg")
         learn =  st.sidebar.selectbox("What would you like assistance with?", listo)
@@ -136,10 +136,8 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
-        #st.markdown('**Select the Hitters or Pitchers tab to predict player salaries**')                       
-        #tab3, tab4 = st.tabs(["Hitters", "Pitchers"])
+       
 
-        #with tab3:
         st.markdown("The data used for predicting player salaries comes from Fangraphs and Baseball-Reference. The data does not include any minor league players. Additionally, the data covers a 20 year period ranging from the 2001 to 2021 season. The players included in the dataset have a minimum of 350 plate appearances per season.")
         st.markdown("**Input or slide the hitting performance values then click Predict Salary**")
 
