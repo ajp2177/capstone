@@ -1,7 +1,6 @@
 # The Business of Baseball: Predicting MLB Player Salaries Using Machine Learning
 
-### Background:
-
+### Background
 In Major League Baseball, players receive millions in guaranteed money each season regardless of their performance. MLB teams have begun the process of starting to factor in player performance before dishing out salaries to players. This is still in the beginning stages and a fairly new concept with teams examining the WAR statistic of players. The issue that is created is MLB teams do not know the proper value to pay players. I player can receive a high salary and then underperform or a player could be undervalued and should receive more. This ultimately affects team decisions regarding trades, releasing players, free agents, and acquiring players in the draft. It is possible for MLB teams to better gauge their player needs, payroll distribution, and player salaries by using regression analysis.
 
 This project uses Gradient Boosting Regression to predict MLB player salaries based on player 
