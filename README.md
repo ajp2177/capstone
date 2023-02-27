@@ -14,9 +14,5 @@ To learn more about the project and Streamlit application, check out my presenta
 
 
 
-
-
-![My Image](predict page.jpg)
-
-
+![predict page](https://user-images.githubusercontent.com/118642994/221667065-9f504688-bc01-4ad8-a494-b22cb883050d.png)
 
