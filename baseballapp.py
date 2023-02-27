@@ -164,17 +164,16 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
         sd = st.number_input("Salary Difference")
 
+        st.write(
+        '<div style="display:flex; justify-content:center;">'
+        '<button style="align-self:center;">Predict Salary</button>'
+        '</div>',
+        unsafe_allow_html=True)
 
         # if button is pressed
         if st.button("Predict Salary"):
             gbr = joblib.load("df_model.pkl")
-            st.write(
-            '<div style="display:flex; justify-content:center;">'
-            '<button style="align-self:center;">Predict</button>'
-            '</div>',
-            unsafe_allow_html=True)
         
-
             cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
             df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
             #use gradient boosting regression model to predict salary
