@@ -170,36 +170,36 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
         '</div>',
         unsafe_allow_html=True)
 
-        # if button is pressed
-        if st.button("Predict Salary"):
-            gbr = joblib.load("df_model.pkl")
-        
-            cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
-            df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
-            #use gradient boosting regression model to predict salary
-            grb_pred = gbr.predict(df)
-            #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
-            pred = round(np.exp(grb_pred)[0],0)
+            # if button is pressed
+            if st.button("Predict Salary"):
+                gbr = joblib.load("df_model.pkl")
 
-            st.dataframe(df)
-            #display the predicted salary 
-            st.header("Player Salary Prediction $" + format(pred, ","))
+                cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
+                df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
+                #use gradient boosting regression model to predict salary
+                grb_pred = gbr.predict(df)
+                #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
+                pred = round(np.exp(grb_pred)[0],0)
 
-            st.markdown("### Predictions compared to 2022 data")
-            #utilize 2022 data from baseball-reference
-            last_season = pd.read_csv('2022_data', index_col = 0)
-            # reformat 2022 batter df for model prediction
-            df_to_predict = last_season.drop(columns = ['Name', '2022 Salary'])
+                st.dataframe(df)
+                #display the predicted salary 
+                st.header("Player Salary Prediction $" + format(pred, ","))
 
-            # load in model
-            gbr_m = joblib.load("df_model.pkl")
+                st.markdown("### Predictions compared to 2022 data")
+                #utilize 2022 data from baseball-reference
+                last_season = pd.read_csv('2022_data', index_col = 0)
+                # reformat 2022 batter df for model prediction
+                df_to_predict = last_season.drop(columns = ['Name', '2022 Salary'])
 
-            new_pred = gbr_m.predict(df_to_predict)
+                # load in model
+                gbr_m = joblib.load("df_model.pkl")
 
-            last_season["Predicted Salary"] = np.around(np.exp(new_pred),0)
+                new_pred = gbr_m.predict(df_to_predict)
 
-            #display comparisions
-            st.dataframe(last_season)
+                last_season["Predicted Salary"] = np.around(np.exp(new_pred),0)
+
+                #display comparisions
+                st.dataframe(last_season)
 
         
 
