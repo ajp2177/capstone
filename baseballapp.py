@@ -174,8 +174,6 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             '</div>',
             unsafe_allow_html=True)
         
-            
-           st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
             cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
             df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
