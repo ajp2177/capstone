@@ -170,7 +170,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             gbr = joblib.load("df_model.pkl")
             st.write(
             '<div style="display:flex; justify-content:center;">'
-            '<button style="align-self:center;">Centered Button</button>'
+            '<button style="align-self:center;">Predict</button>'
             '</div>',
             unsafe_allow_html=True)
         
