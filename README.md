@@ -14,3 +14,11 @@ To learn more about the project and Streamlit application, check out my presenta
 
 
 
+
+
+
+
+![Alt text](/Users/andrewpullar/Desktop/predict\ page.png )
+
+
+
