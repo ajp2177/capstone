@@ -82,7 +82,16 @@ if check_password():
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
-                                
+        elif learn == 'FAQ':
+            st.sidebar.markdown("## FAQ - Frequently Asked Questions\n\n"
+                    "1. How many pages does the application have?\n\n"
+                    "   The application has 3 pages including the Home page, Data Exploration, and Predict Player Salary.\n"
+                    "2. What is the purpose of the application?\n\n"
+                    "   The purpose of the application is to help MLB organizations predict player salaries based on player performance metrics.\n"
+                    "3. Why were the certain statistics chosen for predictions?\n\n"
+                    "   The statistics for user input were chosen based on strong correlations with the target variable (salary) higher feature importance.\n"
+                    "4. How accurate are the predictions?\n\n"
+                    "   The predictions are pretty accurate but tend to generate higher salaries then actual based on 2022 data.\n")                      
         with tab1:
                 df = pd.read_csv('df')
                 dataframe = st.dataframe(df)
@@ -142,7 +151,16 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
-       
+        elif learn == 'FAQ':
+            st.sidebar.markdown("## FAQ - Frequently Asked Questions\n\n"
+                    "1. How many pages does the application have?\n\n"
+                    "   The application has 3 pages including the Home page, Data Exploration, and Predict Player Salary.\n"
+                    "2. What is the purpose of the application?\n\n"
+                    "   The purpose of the application is to help MLB organizations predict player salaries based on player performance metrics.\n"
+                    "3. Why were the certain statistics chosen for predictions?\n\n"
+                    "   The statistics for user input were chosen based on strong correlations with the target variable (salary) higher feature importance.\n"
+                    "4. How accurate are the predictions?\n\n"
+                    "   The predictions are pretty accurate but tend to generate higher salaries then actual based on 2022 data.\n")
 
         st.markdown("The data used for predicting player salaries comes from Fangraphs and Baseball-Reference. The data does not include any minor league players. Additionally, the data covers a 20 year period ranging from the 2001 to 2021 season. The players included in the dataset have a minimum of 350 plate appearances per season.")
         st.markdown("**Input or slide the hitting performance values then click Predict Salary**")
