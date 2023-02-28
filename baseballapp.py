@@ -56,7 +56,7 @@ if check_password():
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
         elif learn == 'FAQ':
-            st.sidebar.markdown('FAQ - Frequently Asked Questions 1. \nline How do I access the application? \nline Refer to section 2 on page 5 for information on using URL link')
+            st.sidebar.markdown('FAQ - Frequently Asked Questions 1.\n How do I access the application?\n Refer to section 2 on page 5 for information on using URL link')
         
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
