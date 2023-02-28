@@ -119,10 +119,7 @@ meansal = statistics.mean(df2.salary)
 print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
                 st.markdown("**Code:**")
                 st.code(code, language='python')
-                
-
-
-                
+              
                 
         with tab2:  
             sc = st.selectbox("Select a plot to visualize: ", ('WAR Stat Values',
@@ -165,14 +162,12 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
         st.markdown("The data used for predicting player salaries comes from Fangraphs and Baseball-Reference. The data does not include any minor league players. Additionally, the data covers a 20 year period ranging from the 2001 to 2021 season. The players included in the dataset have a minimum of 350 plate appearances per season.")
         st.markdown("**Input or slide the hitting performance values then click Predict Salary**")
 
-        age = st.slider('Age', 18, 45, 27)
-
+        #user input 
+        age = st.slider('Age', 18, 44, 27)
 
         bb = st.slider('BB', 0, 140, 70)
 
-
         rbis = st.slider('RBIs', 0, 140, 50)
-
 
         ibb = st.slider('Intentional Walks', 0, 20, 5)
 
@@ -188,19 +183,17 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
 
         sd = st.number_input("Salary Difference")
         
-        
-
-
-        # if button is pressed
+        #generate predictions
         if st.button("Predict Salary"):
             gbr = joblib.load("df_model.pkl")
-
-            cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd']
-            df = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
+            
+            cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd'] #parameters
+            parameters = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
             #use gradient boosting regression model to predict salary
-            grb_pred = gbr.predict(df)
+            grb_pred = gbr.predict(parameters)
             #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
-            pred = round(np.exp(grb_pred)[0],0)
+            #pred = round(np.exp(grb_pred)[0],0)
+            pred = math.floor(math.exp(grb_pred)[0] + 0.5)
 
             st.dataframe(df)
             #display the predicted salary 
