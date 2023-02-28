@@ -57,7 +57,7 @@ if check_password():
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
         elif learn == 'FAQ':
             st.sidebar.markdown("## FAQ - Frequently Asked Questions\n\n"
-                    "1. How do I access the application?\n"
+                    "1. How do I access the application?\n\n"
                     "   Refer to section 2 on page 5 for information on using URL link.\n"
                     "2. What are the system requirements?\n"
                     "   The application can be run on any modern web browser with an internet connection.\n"
