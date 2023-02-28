@@ -44,7 +44,7 @@ if check_password():
     pages = ["Home", "Data Exploration", "Predict Player Salary"]
     message = '''Select one of the options in the dropdown list to access specific page'''
     choice = st.sidebar.selectbox("Choose a page: ",pages, help = message)
-    listo = ['','Page Description', 'Ways to navigate app', 'About app']
+    listo = ['','Page Description', 'Ways to navigate app', 'About app', 'FAQ']
 
     if choice == "Home":
         st.sidebar.markdown("**Help:** ")
@@ -55,7 +55,22 @@ if check_password():
             st.sidebar.markdown('1. To navigate to different pages use the "use the "Choose a page" dropdown list above. 2. To navigate between elements on a page, click on the desired tab at the top of the page.')
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
-                                
+        elif learn == 'FAQ':
+            st.sidebar.markdown('FAQ (Frequently Asked Questions)
+•	How do I access the application?
+o	Refer to section 2 on page 5 for information on using URL link
+•	What password do I use for logging in?
+o	Refer to section 3 on page 6 for password information 
+•	How many pages does the application have?
+o	The application has 3 pages including the Home page, Data Exploration, and Predict Player Salary. For more information on these pages, refer to section 4 titled “Using the System”. 
+•	What is the purpose of the application?
+o	The purpose of the application is to help MLB organizations prediction player salaries based on player performance metrics. 
+•	Why were the certain statistics chosen for predictions?
+o	The statistics for user input were chosen based on strong correlations with the target variable (salary) and higher feature importance. 
+•	How accurate are the predictions?
+o	The predictions are pretty accurate but there is room for fine tuning. The predictions align more closely with players who did received a larger contract in 2022. 
+')
+                                       
         
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
