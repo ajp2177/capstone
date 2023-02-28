@@ -57,15 +57,15 @@ if check_password():
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
         elif learn == 'FAQ':
             st.sidebar.markdown("## FAQ - Frequently Asked Questions\n\n"
-                    "1. How do I access the application?\n\n"
-                    "   Refer to section 2 on page 5 for information on using URL link.\n"
-                    "2. What are the system requirements?\n"
-                    "   The application can be run on any modern web browser with an internet connection.\n"
-                    "3. How do I report a bug or issue?\n"
-                    "   Please contact our support team at support@example.com.\n"
-                    "4. Can I customize the application?\n"
-                    "   Yes, you can customize certain aspects of the application through the settings page.\n"
-                    "   Refer to the user manual for more information.")
+                    "1. How many pages does the application have?\n\n"
+                    "   The application has 3 pages including the Home page, Data Exploration, and Predict Player Salary.\n"
+                    "2. What is the purpose of the application?\n"
+                    "   The purpose of the application is to help MLB organizations predict player salaries based on player performance metrics.\n"
+                    "3. Why were the certain statistics chosen for predictions\n"
+                    "   The statistics for user input were chosen based on strong correlations with the target variable (salary) higher feature importance.\n"
+                    "4. How accurate are the predictions?\n"
+                    "   The predictions are pretty accurate but tend to generate higher salaries then actual based on 2022 data.\n")
+                  
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
         st.image('http://bronxpinstripes.com/wp-content/uploads/2020/06/MLB-Betting.png')
