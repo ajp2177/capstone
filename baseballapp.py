@@ -56,8 +56,16 @@ if check_password():
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
         elif learn == 'FAQ':
-            st.sidebar.markdown("FAQ - Frequently Asked Questions 1.\n How do I access the application?\n Refer to section 2 on page 5 for information on using URL link")
-        
+            st.sidebar.markdown("## FAQ - Frequently Asked Questions\n\n"
+                    "1. How do I access the application?\n"
+                    "   Refer to section 2 on page 5 for information on using URL link.\n"
+                    "2. What are the system requirements?\n"
+                    "   The application can be run on any modern web browser with an internet connection.\n"
+                    "3. How do I report a bug or issue?\n"
+                    "   Please contact our support team at support@example.com.\n"
+                    "4. Can I customize the application?\n"
+                    "   Yes, you can customize certain aspects of the application through the settings page.\n"
+                    "   Refer to the user manual for more information.")
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
         st.image('http://bronxpinstripes.com/wp-content/uploads/2020/06/MLB-Betting.png')
