@@ -212,7 +212,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #predictions for 2021 players 
             new_pred = gbr_m.predict(prev)
 
-            last_season["Salary Prediction"] = np.around(np.exp(new_pred),0)
+            last_season["Salary Prediction"] = np.exp(new_pred).round()
 
             #display comparisions
             st.dataframe(last_season)
