@@ -194,7 +194,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             grb_pred = gbr.predict(parameters)
             #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
             import math
-            math.floor(np.exp(grb_pred)[0])
+            pred = math.floor(np.exp(grb_pred)[0])
             #pred = round(np.exp(grb_pred)[0],0)
            
             st.dataframe(parameters) #store user input 
