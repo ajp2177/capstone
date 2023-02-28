@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 import streamlit as st
 import joblib
-import math
 import time
 
 def check_password():
@@ -193,9 +192,8 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #use gradient boosting regression model to predict salary
             grb_pred = gbr.predict(parameters)
             #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
-            #pred = round(np.exp(grb_pred)[0],0)
-            pred = math.floor(math.exp(grb_pred)[0] + 0.5)
-
+            pred = round(np.exp(grb_pred)[0],0)
+            
             st.dataframe(df)
             #display the predicted salary 
             st.header("Player Salary Prediction $" + format(pred, ","))
