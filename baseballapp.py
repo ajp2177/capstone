@@ -193,10 +193,9 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #use gradient boosting regression model to predict salary
             grb_pred = gbr.predict(parameters)
             #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
-            pred = round(np.exp(grb_pred)[0],0)
+            pred = round(math.exp(grb_pred)[0],0)
            
-            
-            st.dataframe(parameters)
+            st.dataframe(parameters) #store user input 
             #display the predicted salary 
             st.header("Player Salary Prediction $" + format(pred, ","))
 
@@ -204,12 +203,13 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #utilize 2022 data from baseball-reference
             last_season = pd.read_csv('2022_data', index_col = 0)
             # reformat 2022 batter df for model prediction
-            df_to_predict = last_season.drop(columns = ['Name', '2022 Salary'])
+            prev = last_season.drop(columns = ['Name', '2022 Salary'])
 
-            # load in model
+            #gradient boosting regression model using joblib library 
             gbr_m = joblib.load("df_model.pkl")
 
-            new_pred = gbr_m.predict(df_to_predict)
+            #predictions for 2021 players 
+            new_pred = gbr_m.predict(prev)
 
             last_season["Predicted Salary"] = np.around(np.exp(new_pred),0)
 
