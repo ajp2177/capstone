@@ -59,11 +59,11 @@ if check_password():
             st.sidebar.markdown("## FAQ - Frequently Asked Questions\n\n"
                     "1. How many pages does the application have?\n\n"
                     "   The application has 3 pages including the Home page, Data Exploration, and Predict Player Salary.\n"
-                    "2. What is the purpose of the application?\n"
+                    "2. What is the purpose of the application?\n\n"
                     "   The purpose of the application is to help MLB organizations predict player salaries based on player performance metrics.\n"
-                    "3. Why were the certain statistics chosen for predictions\n"
+                    "3. Why were the certain statistics chosen for predictions?\n\n"
                     "   The statistics for user input were chosen based on strong correlations with the target variable (salary) higher feature importance.\n"
-                    "4. How accurate are the predictions?\n"
+                    "4. How accurate are the predictions?\n\n"
                     "   The predictions are pretty accurate but tend to generate higher salaries then actual based on 2022 data.\n")
                   
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
