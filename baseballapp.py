@@ -56,21 +56,7 @@ if check_password():
         elif learn == 'About app':
             st.sidebar.markdown('This app serves to provide insights into MLB player salaries and the value of players through gradient boosting regression.')
         elif learn == 'FAQ':
-            st.sidebar.markdown('FAQ (Frequently Asked Questions)
-•	How do I access the application?
-o	Refer to section 2 on page 5 for information on using URL link
-•	What password do I use for logging in?
-o	Refer to section 3 on page 6 for password information 
-•	How many pages does the application have?
-o	The application has 3 pages including the Home page, Data Exploration, and Predict Player Salary. For more information on these pages, refer to section 4 titled “Using the System”. 
-•	What is the purpose of the application?
-o	The purpose of the application is to help MLB organizations prediction player salaries based on player performance metrics. 
-•	Why were the certain statistics chosen for predictions?
-o	The statistics for user input were chosen based on strong correlations with the target variable (salary) and higher feature importance. 
-•	How accurate are the predictions?
-o	The predictions are pretty accurate but there is room for fine tuning. The predictions align more closely with players who did received a larger contract in 2022. 
-')
-                                       
+            st.sidebar.markdown('FAQ - Frequently Asked Questions 1. How do I access the application? Refer to section 2 on page 5 for information on using URL link')
         
         st.markdown("<h1 style='text-align: center; color: green;'>The Value of MLB Players</h1>", unsafe_allow_html=True)
 
