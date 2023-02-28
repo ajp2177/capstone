@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 import streamlit as st
 import joblib
-import math 
 import time
 
 def check_password():
@@ -195,7 +194,6 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #compute the exponential of prediction and take the first element of the resulting array then round to the nearest integer
             import math
             pred = math.floor(np.exp(grb_pred)[0])
-            #pred = round(np.exp(grb_pred)[0],0)
            
             st.dataframe(parameters) #store user input 
             #display the predicted salary 
@@ -213,7 +211,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             #predictions for 2021 players 
             new_pred = gbr_m.predict(prev)
 
-            last_season["Predicted Salary"] = np.around(np.exp(new_pred),0)
+            last_season["Salary Prediction"] = np.around(np.exp(new_pred),0)
 
             #display comparisions
             st.dataframe(last_season)
