@@ -188,6 +188,7 @@ print('The average MLB salary is ', '${:,.2f}'.format(meansal))'''
             gbr = joblib.load("df_model.pkl")
             
             cn = ['age', 'bb', 'rbis', 'obp', 'ops', 'ibb', 'hr', 'sd'] #parameters
+            
             parameters = pd.DataFrame([[age, bb, rbis, obp, ops, ibb, hr, sd]], columns = cn)
             #use gradient boosting regression model to predict salary
             grb_pred = gbr.predict(parameters)
